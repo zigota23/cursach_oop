@@ -128,7 +128,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(747, 401);
+            this.panel1.Size = new System.Drawing.Size(734, 411);
             this.panel1.TabIndex = 7;
             // 
             // panel2
@@ -137,7 +137,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(414, 401);
+            this.panel2.Size = new System.Drawing.Size(414, 411);
             this.panel2.TabIndex = 7;
             // 
             // pictureBox1
@@ -146,7 +146,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(414, 401);
+            this.pictureBox1.Size = new System.Drawing.Size(414, 411);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -165,7 +165,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(414, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(333, 401);
+            this.panel3.Size = new System.Drawing.Size(320, 411);
             this.panel3.TabIndex = 8;
             // 
             // label3
@@ -196,11 +196,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 401);
+            this.ClientSize = new System.Drawing.Size(734, 411);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AuthorizationForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AuthorizationForm";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

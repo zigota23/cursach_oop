@@ -15,6 +15,7 @@ namespace cursach
 {
     public partial class AuthorizationForm : Form
     {
+
         public AuthorizationForm()
         {
             InitializeComponent();
