@@ -41,14 +41,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.submitButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -167,28 +167,9 @@
             this.panel1.Size = new System.Drawing.Size(800, 546);
             this.panel1.TabIndex = 11;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.firstNameField);
-            this.panel2.Controls.Add(this.passwordField);
-            this.panel2.Controls.Add(this.lastNameField);
-            this.panel2.Controls.Add(this.submitButton);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.repeatPasswordField);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.emailField);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(394, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(406, 546);
-            this.panel2.TabIndex = 11;
-            // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(11)))), ((int)(((byte)(24)))));
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
@@ -207,6 +188,27 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(11)))), ((int)(((byte)(24)))));
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.firstNameField);
+            this.panel2.Controls.Add(this.passwordField);
+            this.panel2.Controls.Add(this.lastNameField);
+            this.panel2.Controls.Add(this.submitButton);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.repeatPasswordField);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.emailField);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(394, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(406, 546);
+            this.panel2.TabIndex = 11;
             // 
             // label6
             // 
@@ -229,10 +231,10 @@
             this.Name = "RegistrationForm";
             this.Text = "RegistrationForm";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
