@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using BCrypt;
 
 namespace cursach
 {
@@ -27,44 +28,48 @@ namespace cursach
             string firstname = firstNameField.Text;
             string lastname = lastNameField.Text;
             RegisterUser(email, password, firstname, lastname);
+            AuthorizationForm form = new AuthorizationForm();
+            form.Show();
+            this.Hide();
         }
         private void RegisterUser(string email, string password, string firstname, string lastname)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
-                try
-                {
                     connection.Open();
-
-                    if (connection.State == ConnectionState.Open)
-                    {
-                        Console.WriteLine(connection.State);
-                    }
-                    else
+                    if (connection.State == ConnectionState.Closed)
                     {
                         MessageBox.Show($"Error connection!");
                     }
-                    using (NpgsqlCommand cmd = new NpgsqlCommand())
+                    
+                    using (NpgsqlCommand cmdCheckUser = new NpgsqlCommand("SELECT COUNT(*) FROM users WHERE email = @email", connection))
                     {
-                        cmd.Connection = connection;
-                        cmd.CommandText = "INSERT INTO users (email, password , firstname , lastname) VALUES (@email, @password , @firstname , @lastname)";
-                        cmd.Parameters.AddWithValue("@email", email);
-                        cmd.Parameters.AddWithValue("@password", password);
-                        cmd.Parameters.AddWithValue("@firstname", firstname);
-                        cmd.Parameters.AddWithValue("@lastname", lastname);
-                        cmd.ExecuteNonQuery();
+                        cmdCheckUser.Parameters.AddWithValue("email", email);
+
+                        int userCount = Convert.ToInt32(cmdCheckUser.ExecuteScalar());
+
+                        if (userCount > 0)
+                        {
+                            MessageBox.Show("User with this email already exists");
+                            connection.Close();
+                        } else { 
+                        using (NpgsqlCommand cmd = new NpgsqlCommand())
+                        {
+                            string hashpass = BCrypt.Net.BCrypt.HashPassword(password);
+                            cmd.Connection = connection;
+                            cmd.CommandText = "INSERT INTO users (email, hashpass , firstname , lastname) VALUES (@email, @hashpass , @firstname , @lastname)";
+                            cmd.Parameters.AddWithValue("@email", email);
+                            cmd.Parameters.AddWithValue("@hashpass", hashpass);
+                            cmd.Parameters.AddWithValue("@firstname", firstname);
+                            cmd.Parameters.AddWithValue("@lastname", lastname);
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Successful registration.");
+                            connection.Close();
+                        }
+                                }
                     }
-                }
-
-
-                catch
-                {
-                    //MessageBox.Show($"Error connection!");
-                }
-                MessageBox.Show("Successful registration.");
-                connection.Close();
-                Console.WriteLine(connection.State);
             }
+            
         }
         
 
