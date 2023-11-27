@@ -27,16 +27,6 @@ namespace cursach
             string password = passwordField.Text;
         }
 
-        string StringConnection = "Server = ; port = ; user id = ; password = ; database = ;";
-        NpgsqlConnection Con;
-        NpgsqlCommand Cmd;
-        private void connection()
-        {
-            Con = new NpgsqlConnection();
-            Con.ConnectionString = StringConnection;
-            Con.Open();
-        }
-
         private void SignUpButton_Click(object sender, EventArgs e)
         {
             RegistrationForm form = new RegistrationForm();
