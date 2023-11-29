@@ -13,7 +13,7 @@ namespace cursach
 {
     public partial class VoteForm : Form
     {
-        private DataBase database = new DataBase();
+        //private DataBase database = new DataBase();
         public VoteForm()
         {
             InitializeComponent();
@@ -23,13 +23,14 @@ namespace cursach
         private void submitButton_Click(object sender, EventArgs e)
         {
             Console.WriteLine(GlobalData.LoggedInUserId);
-            string selectedQuestion = questionComboBox.SelectedItem.ToString();
-            int voteId = database.GetVoteIdByTitle(selectedQuestion);
+            //string selectedQuestion = questionComboBox.SelectedItem.ToString();
+            //Guid voteId = DataBase.GetVoteIdByTitle(selectedQuestion);
         }
+
         private void LoadQuestions()
         {
-            List<string> questionTitles = database.GetVoteTitles(); 
-            questionComboBox.DataSource = questionTitles; 
+            List<(Guid Id, string Title, string Description)> votes = DataBase.GetVotes();
+            questionComboBox.DataSource = votes;
         }
     }
 }

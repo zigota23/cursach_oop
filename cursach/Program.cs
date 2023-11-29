@@ -15,8 +15,8 @@ namespace cursach
         [STAThread]
         static void Main()
         {
-            DataBase db = new DataBase();
-            db.CreateTables();
+            DataBase.CreateTables();
+            //DataBase.CreateVote("test2", "test????", 1);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             AuthorizationForm form = new AuthorizationForm();
