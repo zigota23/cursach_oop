@@ -98,7 +98,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Auth.cs" />
     <Compile Include="AuthorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +110,8 @@
     <Compile Include="ContactForm.Designer.cs">
       <DependentUpon>ContactForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataBase.cs" />
+    <Compile Include="GlobalData.cs" />
     <Compile Include="ProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>

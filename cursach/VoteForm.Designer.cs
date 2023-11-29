@@ -35,8 +35,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBoxVotingQuestion = new System.Windows.Forms.TextBox();
             this.NextVotingQuestionButton = new System.Windows.Forms.Button();
+            this.questionComboBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,7 @@
             this.submitButton.TabIndex = 7;
             this.submitButton.Text = "SUBMIT";
             this.submitButton.UseVisualStyleBackColor = false;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // panel1
             // 
@@ -120,14 +121,6 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Personal Info";
             // 
-            // textBoxVotingQuestion
-            // 
-            this.textBoxVotingQuestion.Location = new System.Drawing.Point(36, 102);
-            this.textBoxVotingQuestion.Multiline = true;
-            this.textBoxVotingQuestion.Name = "textBoxVotingQuestion";
-            this.textBoxVotingQuestion.Size = new System.Drawing.Size(447, 55);
-            this.textBoxVotingQuestion.TabIndex = 9;
-            // 
             // NextVotingQuestionButton
             // 
             this.NextVotingQuestionButton.Location = new System.Drawing.Point(375, 263);
@@ -136,7 +129,14 @@
             this.NextVotingQuestionButton.TabIndex = 10;
             this.NextVotingQuestionButton.Text = "NEXT";
             this.NextVotingQuestionButton.UseVisualStyleBackColor = true;
-            this.NextVotingQuestionButton.Click += new System.EventHandler(this.NextVotingQuestionButton_Click);
+            // 
+            // questionComboBox
+            // 
+            this.questionComboBox.FormattingEnabled = true;
+            this.questionComboBox.Location = new System.Drawing.Point(48, 105);
+            this.questionComboBox.Name = "questionComboBox";
+            this.questionComboBox.Size = new System.Drawing.Size(201, 21);
+            this.questionComboBox.TabIndex = 11;
             // 
             // VoteForm
             // 
@@ -144,8 +144,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(11)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(533, 319);
+            this.Controls.Add(this.questionComboBox);
             this.Controls.Add(this.NextVotingQuestionButton);
-            this.Controls.Add(this.textBoxVotingQuestion);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.label1);
@@ -168,7 +168,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBoxVotingQuestion;
         private System.Windows.Forms.Button NextVotingQuestionButton;
+        private System.Windows.Forms.ComboBox questionComboBox;
     }
 }

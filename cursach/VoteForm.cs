@@ -13,62 +13,23 @@ namespace cursach
 {
     public partial class VoteForm : Form
     {
-        private string connectionString = "Server = localhost ; port = 5432; user id = postgres; password = root; database = cursach;";
+        private DataBase database = new DataBase();
         public VoteForm()
         {
             InitializeComponent();
-            LoadVotingQuestionsFromDatabase();
-            DisplayCurrentVotingQuestion();
+            LoadQuestions(); 
         }
 
-        private List<string> votingQuestions = new List<string>();
-        private int currentQuestionIndex = 0;
-
-        private void DisplayCurrentVotingQuestion()
+        private void submitButton_Click(object sender, EventArgs e)
         {
-            if (votingQuestions.Count > 0 && currentQuestionIndex < votingQuestions.Count)
-            {
-                textBoxVotingQuestion.Text = votingQuestions[currentQuestionIndex];
-            }
-            else
-            {
-                textBoxVotingQuestion.Text = "No votes.";
-            }
+            Console.WriteLine(GlobalData.LoggedInUserId);
+            string selectedQuestion = questionComboBox.SelectedItem.ToString();
+            int voteId = database.GetVoteIdByTitle(selectedQuestion);
         }
-
-        private void LoadVotingQuestionsFromDatabase()
+        private void LoadQuestions()
         {
-            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
-            {
-                connection.Open();
-
-                using (NpgsqlCommand cmd = new NpgsqlCommand())
-                {
-                    cmd.Connection = connection;
-                    cmd.CommandText = "SELECT question FROM voting_questions";
-
-                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            string question = reader["question"].ToString();
-                            votingQuestions.Add(question);
-                        }
-                    }
-                }
-            }
+            List<string> questionTitles = database.GetVoteTitles(); 
+            questionComboBox.DataSource = questionTitles; 
         }
-
-        private void NextVotingQuestionButton_Click(object sender, EventArgs e)
-        {
-            currentQuestionIndex++;
-            if (currentQuestionIndex >= votingQuestions.Count)
-            {
-                MessageBox.Show("All votes gone.");
-                currentQuestionIndex = 0;
-            }
-            DisplayCurrentVotingQuestion();
-        }
-
     }
 }

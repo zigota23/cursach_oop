@@ -11,12 +11,15 @@ namespace cursach
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
         [STAThread]
         static void Main()
         {
+           // DataBase db = new DataBase();
+           // db.CreateTables("Server = localhost ; port = 5432; user id = postgres; password = root; database = cursach;");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AuthorizationForm());
-        }
+                    }
     }
 }

@@ -16,7 +16,7 @@ namespace cursach
 {
     public partial class RegistrationForm : Form
     { 
-        Auth reg = new Auth();
+        DataBase registration = new DataBase();
         public RegistrationForm()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace cursach
             string firstname = firstNameField.Text;
             string lastname = lastNameField.Text;
            
-            reg.RegisterUser(email, password, firstname, lastname);
+            registration.RegisterUser(email, password, firstname, lastname);
             AuthorizationForm form = new AuthorizationForm();
             form.Show();
             this.Hide();
