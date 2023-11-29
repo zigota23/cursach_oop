@@ -15,11 +15,13 @@ namespace cursach
         [STAThread]
         static void Main()
         {
-           // DataBase db = new DataBase();
-           // db.CreateTables("Server = localhost ; port = 5432; user id = postgres; password = root; database = cursach;");
+            DataBase db = new DataBase();
+            db.CreateTables();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AuthorizationForm());
+            AuthorizationForm form = new AuthorizationForm();
+            GlobalData.AuthorizationForm = form;
+            Application.Run(form);
                     }
     }
 }

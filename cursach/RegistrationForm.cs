@@ -29,9 +29,9 @@ namespace cursach
             string lastname = lastNameField.Text;
            
             registration.RegisterUser(email, password, firstname, lastname);
-            AuthorizationForm form = new AuthorizationForm();
-            form.Show();
-            this.Hide();
+            
+            GlobalData.RegistrationForm.Hide();
+            GlobalData.AuthorizationForm.Show();
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)

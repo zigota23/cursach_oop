@@ -30,9 +30,8 @@ namespace cursach
         
         private void SignUpButton_Click(object sender, EventArgs e)
         {
-            RegistrationForm form = new RegistrationForm();
-            form.Show();
-            this.Hide();
+            GlobalData.AuthorizationForm.Hide();
+            GlobalData.RegistrationForm.Show();
         }
     }
 }
