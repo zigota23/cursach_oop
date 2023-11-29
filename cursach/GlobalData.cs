@@ -8,6 +8,6 @@ namespace cursach
 {
     public static class GlobalData
     { 
-        public static int LoggedInUserId { get; set; }
+        public static Guid LoggedInUserId { get; set; }
     }
 }

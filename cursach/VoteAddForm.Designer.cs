@@ -47,7 +47,7 @@
             this.textBoxNewVotingQuestion.Location = new System.Drawing.Point(41, 96);
             this.textBoxNewVotingQuestion.Multiline = true;
             this.textBoxNewVotingQuestion.Name = "textBoxNewVotingQuestion";
-            this.textBoxNewVotingQuestion.Size = new System.Drawing.Size(429, 296);
+            this.textBoxNewVotingQuestion.Size = new System.Drawing.Size(429, 124);
             this.textBoxNewVotingQuestion.TabIndex = 1;
             // 
             // VoteAddForm

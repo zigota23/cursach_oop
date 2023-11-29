@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -11,7 +12,7 @@ namespace cursach
 {
     internal class DataBase
     {
-        private string connectionString = "Server = localhost ; port = 5432; user id = postgres; password = root; database = cursach;";
+        private static string connectionString = "Server = localhost ; port = 5432; user id = postgres; password = root; database = cursach;";
         private int loggedInUserId;
         public void AutorizationUser(string email, string password, AuthorizationForm authForm)
         {
@@ -27,7 +28,7 @@ namespace cursach
                     {
                         if (reader.Read())
                         {
-                            int userId = reader.GetInt32(0);
+                            Guid userId = reader.GetGuid(0);
                             string hashedPasswordFromDB = reader["hashpass"].ToString();
 
                             if (BCrypt.Net.BCrypt.Verify(password, hashedPasswordFromDB))
@@ -82,7 +83,7 @@ namespace cursach
                         {
                             string hashpass = BCrypt.Net.BCrypt.HashPassword(password);
                             cmd.Connection = connection;
-                            cmd.CommandText = "INSERT INTO users (email, hashpass , firstname , lastname) VALUES (@email, @hashpass , @firstname , @lastname)";
+                            cmd.CommandText = "INSERT INTO users (id, email, hashpass , firstname , lastname) VALUES (uuid_generate_v4(), @email, @hashpass , @firstname , @lastname)";
                             cmd.Parameters.AddWithValue("@email", email);
                             cmd.Parameters.AddWithValue("@hashpass", hashpass);
                             cmd.Parameters.AddWithValue("@firstname", firstname);
@@ -96,7 +97,7 @@ namespace cursach
             }
 
         }
-        public void CreateTables()
+        public static void CreateTables()
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
@@ -105,11 +106,11 @@ namespace cursach
                 using (NpgsqlCommand cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = connection;
-                    cmd.CommandText = "CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, email VARCHAR(50) UNIQUE, hashPass VARCHAR(200),firstName VARCHAR(50),  lastName VARCHAR(50) )";
+                    cmd.CommandText = "CREATE TABLE IF NOT EXISTS users (id UUID PRIMARY KEY, email VARCHAR(50) UNIQUE, hashPass VARCHAR(200),firstName VARCHAR(50),  lastName VARCHAR(50) )";
                     cmd.ExecuteNonQuery();
-                    cmd.CommandText = "CREATE TABLE IF NOT EXISTS votes (id SERIAL PRIMARY KEY, title VARCHAR(255), description VARCHAR(255) )";
+                    cmd.CommandText = "CREATE TABLE IF NOT EXISTS votes (id UUID PRIMARY KEY, title VARCHAR(255), description VARCHAR(255), creatorId UUID NOT NULL, createAt VARCHAR(255), FOREIGN KEY (creatorId) REFERENCES users(id) )";
                     cmd.ExecuteNonQuery();
-                    cmd.CommandText = "CREATE TABLE IF NOT EXISTS votes_users_result (userId SERIAL NOT NULL, voteId SERIAL NOT NULL, result BOOLEAN NOT NULL, FOREIGN KEY (userId) REFERENCES users(id), FOREIGN KEY (voteId) REFERENCES votes(id), UNIQUE (userId, voteId) )";
+                    cmd.CommandText = "CREATE TABLE IF NOT EXISTS votes_users_result (userId UUID NOT NULL, voteId UUID NOT NULL, result BOOLEAN NOT NULL, FOREIGN KEY (userId) REFERENCES users(id), FOREIGN KEY (voteId) REFERENCES votes(id), UNIQUE (userId, voteId) )";
                     cmd.ExecuteNonQuery();
                 }
                 connection.Close();
@@ -177,17 +178,21 @@ namespace cursach
             }
         }
 
-        public void CreateVote(string title, string description)
+        public static void CreateVote(string title, string description,Guid creatorId)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
                 connection.Open();
-                string insertVoteQuery = "INSERT INTO votes (title, description) VALUES (@Title, @Description);";
+                string insertVoteQuery = "INSERT INTO votes (id, title, description, creatorId, createAt) VALUES (uuid_generate_v4(),@Title, @Description, @creatorId, @createAt);";
                 using (NpgsqlCommand command = new NpgsqlCommand(insertVoteQuery, connection))
                 {
+                    DateTime myDateTime = DateTime.Now;
+                    string sqlFormattedDate = myDateTime.ToString("yyyy-MM-dd HH:mm:ss");
                     command.Parameters.AddWithValue("@Title", title);
                     command.Parameters.AddWithValue("@Description", description);
-
+                    command.Parameters.AddWithValue("@creatorId", creatorId);
+                    command.Parameters.AddWithValue("@createAt", sqlFormattedDate);
+                    
                     command.ExecuteNonQuery();
                 }
             }
@@ -231,7 +236,7 @@ namespace cursach
             }
         }
 
-        public int GetVoteIdByTitle(string title)
+        public static Guid GetVoteIdByTitle(string title)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
@@ -246,12 +251,39 @@ namespace cursach
                     {
                         if (reader.Read())
                         {
-                            return reader.GetInt32(0);
+                            return reader.GetGuid(0);
                         }
-                        return -1;
+                        throw new InvalidOperationException("can`t find by this title");;
                     }
                 }
             }
+        }
+        public static List<(Guid Id, string Title, string Description)> GetVotes()
+        {
+            List<(Guid Id, string Title, string Description)> votes = new List<(Guid Id, string Title, string Description)>();
+
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string getVotesQuery = "SELECT id, title, description FROM votes;";
+
+                using (NpgsqlCommand command = new NpgsqlCommand(getVotesQuery, connection))
+                {
+                    using (NpgsqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Guid voteId = reader.GetGuid(0);
+                            string title = reader.GetString(1);
+                            string description = reader.IsDBNull(2) ? string.Empty : reader.GetString(2);
+
+                            votes.Add((voteId, title, description));
+                        }
+                    }
+                }
+            }
+            return votes;
         }
 
     }
