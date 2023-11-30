@@ -37,6 +37,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.NextVotingQuestionButton = new System.Windows.Forms.Button();
             this.questionComboBox = new System.Windows.Forms.ComboBox();
+            this.OnFormClose = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,12 +139,25 @@
             this.questionComboBox.Size = new System.Drawing.Size(201, 21);
             this.questionComboBox.TabIndex = 11;
             // 
+            // OnFormClose
+            // 
+            this.OnFormClose.AutoSize = true;
+            this.OnFormClose.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.OnFormClose.Location = new System.Drawing.Point(498, 297);
+            this.OnFormClose.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.OnFormClose.Name = "OnFormClose";
+            this.OnFormClose.Size = new System.Drawing.Size(24, 13);
+            this.OnFormClose.TabIndex = 15;
+            this.OnFormClose.Text = "Exit";
+            this.OnFormClose.Click += new System.EventHandler(this.OnFormClose_Click);
+            // 
             // VoteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(11)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(533, 319);
+            this.Controls.Add(this.OnFormClose);
             this.Controls.Add(this.questionComboBox);
             this.Controls.Add(this.NextVotingQuestionButton);
             this.Controls.Add(this.panel1);
@@ -170,5 +184,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button NextVotingQuestionButton;
         private System.Windows.Forms.ComboBox questionComboBox;
+        private System.Windows.Forms.Label OnFormClose;
     }
 }

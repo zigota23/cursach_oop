@@ -42,6 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.OnFormClose = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -50,25 +51,28 @@
             // 
             // emailField
             // 
-            this.emailField.Location = new System.Drawing.Point(95, 127);
+            this.emailField.Location = new System.Drawing.Point(63, 83);
+            this.emailField.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.emailField.Name = "emailField";
-            this.emailField.Size = new System.Drawing.Size(160, 26);
+            this.emailField.Size = new System.Drawing.Size(108, 20);
             this.emailField.TabIndex = 0;
             // 
             // passwordField
             // 
-            this.passwordField.Location = new System.Drawing.Point(95, 189);
+            this.passwordField.Location = new System.Drawing.Point(63, 123);
+            this.passwordField.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.passwordField.Name = "passwordField";
-            this.passwordField.Size = new System.Drawing.Size(160, 26);
+            this.passwordField.Size = new System.Drawing.Size(108, 20);
             this.passwordField.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(91, 104);
+            this.label1.Location = new System.Drawing.Point(61, 68);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 20);
+            this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Email";
             // 
@@ -76,9 +80,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(91, 166);
+            this.label2.Location = new System.Drawing.Point(61, 108);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
             // 
@@ -86,9 +91,10 @@
             // 
             this.loginButton.BackColor = System.Drawing.Color.LightSkyBlue;
             this.loginButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.loginButton.Location = new System.Drawing.Point(95, 278);
+            this.loginButton.Location = new System.Drawing.Point(63, 181);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(160, 34);
+            this.loginButton.Size = new System.Drawing.Size(107, 22);
             this.loginButton.TabIndex = 4;
             this.loginButton.Text = "LOGIN";
             this.loginButton.UseVisualStyleBackColor = false;
@@ -100,7 +106,8 @@
             this.forgotPasswordButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.forgotPasswordButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.forgotPasswordButton.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.forgotPasswordButton.Location = new System.Drawing.Point(93, 218);
+            this.forgotPasswordButton.Location = new System.Drawing.Point(62, 142);
+            this.forgotPasswordButton.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.forgotPasswordButton.Name = "forgotPasswordButton";
             this.forgotPasswordButton.Size = new System.Drawing.Size(130, 17);
             this.forgotPasswordButton.TabIndex = 5;
@@ -112,8 +119,8 @@
             this.SignUpButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SignUpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUpButton.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.SignUpButton.Location = new System.Drawing.Point(181, 245);
-            this.SignUpButton.Margin = new System.Windows.Forms.Padding(1, 10, 1, 1);
+            this.SignUpButton.Location = new System.Drawing.Point(121, 159);
+            this.SignUpButton.Margin = new System.Windows.Forms.Padding(1, 6, 1, 1);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(56, 17);
             this.SignUpButton.TabIndex = 6;
@@ -127,13 +134,15 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(734, 411);
+            this.panel1.Size = new System.Drawing.Size(489, 267);
             this.panel1.TabIndex = 7;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(11)))), ((int)(((byte)(24)))));
+            this.panel3.Controls.Add(this.OnFormClose);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
@@ -144,9 +153,10 @@
             this.panel3.Controls.Add(this.emailField);
             this.panel3.Controls.Add(this.forgotPasswordButton);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(414, 0);
+            this.panel3.Location = new System.Drawing.Point(276, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(320, 411);
+            this.panel3.Size = new System.Drawing.Size(213, 267);
             this.panel3.TabIndex = 8;
             // 
             // label4
@@ -155,8 +165,8 @@
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(93, 245);
-            this.label4.Margin = new System.Windows.Forms.Padding(1, 10, 1, 1);
+            this.label4.Location = new System.Drawing.Point(62, 159);
+            this.label4.Margin = new System.Windows.Forms.Padding(1, 6, 1, 1);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 17);
             this.label4.TabIndex = 8;
@@ -167,7 +177,8 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(88, 54);
+            this.label3.Location = new System.Drawing.Point(59, 35);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 45);
             this.label3.TabIndex = 7;
@@ -178,8 +189,9 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(414, 411);
+            this.panel2.Size = new System.Drawing.Size(276, 267);
             this.panel2.TabIndex = 7;
             // 
             // pictureBox1
@@ -188,20 +200,34 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(414, 411);
+            this.pictureBox1.Size = new System.Drawing.Size(276, 267);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // OnFormClose
+            // 
+            this.OnFormClose.AutoSize = true;
+            this.OnFormClose.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.OnFormClose.Location = new System.Drawing.Point(168, 231);
+            this.OnFormClose.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.OnFormClose.Name = "OnFormClose";
+            this.OnFormClose.Size = new System.Drawing.Size(24, 13);
+            this.OnFormClose.TabIndex = 15;
+            this.OnFormClose.Text = "Exit";
+            this.OnFormClose.Click += new System.EventHandler(this.OnFormClose_Click);
+            // 
             // AuthorizationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 411);
+            this.ClientSize = new System.Drawing.Size(489, 267);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AuthorizationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AuthorizationForm";
@@ -229,5 +255,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label OnFormClose;
     }
 }

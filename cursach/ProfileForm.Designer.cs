@@ -45,6 +45,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.OnFormClose = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -59,7 +60,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(533, 42);
             this.panel1.TabIndex = 0;
@@ -198,6 +199,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.OnFormClose);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label5);
@@ -208,7 +210,7 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(270, 42);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(263, 250);
             this.panel2.TabIndex = 9;
@@ -218,7 +220,7 @@
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 42);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(270, 250);
             this.panel3.TabIndex = 10;
@@ -227,12 +229,24 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(34, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(193, 166);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // OnFormClose
+            // 
+            this.OnFormClose.AutoSize = true;
+            this.OnFormClose.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.OnFormClose.Location = new System.Drawing.Point(213, 213);
+            this.OnFormClose.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.OnFormClose.Name = "OnFormClose";
+            this.OnFormClose.Size = new System.Drawing.Size(24, 13);
+            this.OnFormClose.TabIndex = 15;
+            this.OnFormClose.Text = "Exit";
+            this.OnFormClose.Click += new System.EventHandler(this.OnFormClose_Click);
             // 
             // ProfileForm
             // 
@@ -244,7 +258,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ProfileForm";
             this.Text = "ProfileForm";
             this.panel1.ResumeLayout(false);
@@ -275,5 +289,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label OnFormClose;
     }
 }

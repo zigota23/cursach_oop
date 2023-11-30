@@ -44,5 +44,15 @@ namespace cursach
             Application.Exit();
         }
 
+        private void LogInButton_Click(object sender, EventArgs e)
+        {          
+            GlobalData.RegistrationForm.Hide();
+            GlobalData.AuthorizationForm.Show();
+        }
+
+        private void OnFormClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

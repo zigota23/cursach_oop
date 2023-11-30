@@ -16,5 +16,10 @@ namespace cursach
         {
             InitializeComponent();
         }
+
+        private void OnFormClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

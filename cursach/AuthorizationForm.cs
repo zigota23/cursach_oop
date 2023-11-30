@@ -33,5 +33,10 @@ namespace cursach
             GlobalData.AuthorizationForm.Hide();
             GlobalData.RegistrationForm.Show();
         }
+
+        private void OnFormClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

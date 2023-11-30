@@ -32,5 +32,10 @@ namespace cursach
             List<(Guid Id, string Title, string Description)> votes = DataBase.GetVotes();
             questionComboBox.DataSource = votes;
         }
+
+        private void OnFormClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

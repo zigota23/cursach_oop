@@ -45,8 +45,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.LogInButton = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.OnFormClose = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,7 +69,7 @@
             // emailField
             // 
             this.emailField.Location = new System.Drawing.Point(60, 73);
-            this.emailField.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailField.Margin = new System.Windows.Forms.Padding(2);
             this.emailField.Name = "emailField";
             this.emailField.Size = new System.Drawing.Size(171, 20);
             this.emailField.TabIndex = 1;
@@ -77,7 +78,7 @@
             // 
             this.firstNameField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.firstNameField.Location = new System.Drawing.Point(60, 114);
-            this.firstNameField.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.firstNameField.Margin = new System.Windows.Forms.Padding(2);
             this.firstNameField.Name = "firstNameField";
             this.firstNameField.Size = new System.Drawing.Size(171, 20);
             this.firstNameField.TabIndex = 3;
@@ -98,7 +99,7 @@
             // 
             this.lastNameField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lastNameField.Location = new System.Drawing.Point(60, 155);
-            this.lastNameField.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lastNameField.Margin = new System.Windows.Forms.Padding(2);
             this.lastNameField.Name = "lastNameField";
             this.lastNameField.Size = new System.Drawing.Size(171, 20);
             this.lastNameField.TabIndex = 5;
@@ -119,7 +120,7 @@
             // 
             this.passwordField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.passwordField.Location = new System.Drawing.Point(60, 192);
-            this.passwordField.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passwordField.Margin = new System.Windows.Forms.Padding(2);
             this.passwordField.Name = "passwordField";
             this.passwordField.Size = new System.Drawing.Size(171, 20);
             this.passwordField.TabIndex = 7;
@@ -140,7 +141,7 @@
             // 
             this.repeatPasswordField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.repeatPasswordField.Location = new System.Drawing.Point(60, 235);
-            this.repeatPasswordField.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.repeatPasswordField.Margin = new System.Windows.Forms.Padding(2);
             this.repeatPasswordField.Name = "repeatPasswordField";
             this.repeatPasswordField.Size = new System.Drawing.Size(171, 20);
             this.repeatPasswordField.TabIndex = 9;
@@ -162,7 +163,7 @@
             this.submitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.submitButton.BackColor = System.Drawing.Color.LightSkyBlue;
             this.submitButton.Location = new System.Drawing.Point(60, 269);
-            this.submitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.submitButton.Margin = new System.Windows.Forms.Padding(2);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(169, 23);
             this.submitButton.TabIndex = 10;
@@ -177,7 +178,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(533, 355);
             this.panel1.TabIndex = 11;
@@ -188,7 +189,7 @@
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(262, 355);
             this.panel3.TabIndex = 12;
@@ -208,8 +209,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(11)))), ((int)(((byte)(24)))));
+            this.panel2.Controls.Add(this.OnFormClose);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.LogInButton);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.firstNameField);
             this.panel2.Controls.Add(this.passwordField);
@@ -224,7 +226,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(262, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(271, 355);
             this.panel2.TabIndex = 11;
@@ -240,16 +242,17 @@
             this.label8.TabIndex = 13;
             this.label8.Text = "have account ?";
             // 
-            // label7
+            // LogInButton
             // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label7.Location = new System.Drawing.Point(161, 294);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Sign In";
+            this.LogInButton.AutoSize = true;
+            this.LogInButton.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.LogInButton.Location = new System.Drawing.Point(161, 294);
+            this.LogInButton.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LogInButton.Name = "LogInButton";
+            this.LogInButton.Size = new System.Drawing.Size(37, 13);
+            this.LogInButton.TabIndex = 12;
+            this.LogInButton.Text = "Log In";
+            this.LogInButton.Click += new System.EventHandler(this.LogInButton_Click);
             // 
             // label6
             // 
@@ -263,6 +266,18 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Registration form";
             // 
+            // OnFormClose
+            // 
+            this.OnFormClose.AutoSize = true;
+            this.OnFormClose.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.OnFormClose.Location = new System.Drawing.Point(207, 294);
+            this.OnFormClose.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.OnFormClose.Name = "OnFormClose";
+            this.OnFormClose.Size = new System.Drawing.Size(24, 13);
+            this.OnFormClose.TabIndex = 14;
+            this.OnFormClose.Text = "Exit";
+            this.OnFormClose.Click += new System.EventHandler(this.OnFormClose_Click);
+            // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,7 +285,7 @@
             this.ClientSize = new System.Drawing.Size(533, 355);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RegistrationForm";
             this.Text = "RegistrationForm";
             this.panel1.ResumeLayout(false);
@@ -301,6 +316,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label LogInButton;
+        private System.Windows.Forms.Label OnFormClose;
     }
 }
