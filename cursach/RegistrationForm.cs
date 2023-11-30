@@ -30,39 +30,24 @@ namespace cursach
             string lastname = lastNameField.Text;
             string confirmPassword = repeatPasswordField.Text;
 
-            registration.RegisterUser(email, password, firstname, lastname);
-
-            if(!IsConfirmedPassword(password, confirmPassword))
+            if(!DataBase.IsConfirmedPassword(password, confirmPassword))
             {
                 MessageBox.Show("Пароли не совпадают", "Проверка данных", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            if (IsValidEmail(email) && IsValidPassword(password))
-            {
-                GlobalData.RegistrationForm.Hide();
-                GlobalData.AuthorizationForm.Show();
-            }
             else
             {
-                MessageBox.Show("Введенные Email и(или) Пароль не являются действительными.", "Проверка Email и Пароля", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private bool IsConfirmedPassword(string password, string confirmPassword)
-        {
-            return password == confirmPassword;
-        }
-
-        private bool IsValidEmail(string email)
-        {
-            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-            Regex regex = new Regex(emailPattern);
-            return regex.IsMatch(email);
-        }
-
-        private bool IsValidPassword(string password)
-        {
-            return password.Length >= 6;
+                if (DataBase.IsValidEmail(email) && DataBase.IsValidPassword(password))
+                {
+                    registration.RegisterUser(email, password, firstname, lastname);
+                    GlobalData.RegistrationForm.Hide();
+                    GlobalData.AuthorizationForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Введенные Email и(или) Пароль не являются действительными.", "Проверка Email и Пароля", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }          
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
