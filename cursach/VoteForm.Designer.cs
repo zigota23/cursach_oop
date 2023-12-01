@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.submitButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.LogOutButton = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -67,7 +67,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.LogOutButton);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label8);
@@ -78,16 +78,17 @@
             this.panel1.Size = new System.Drawing.Size(533, 42);
             this.panel1.TabIndex = 8;
             // 
-            // label5
+            // LogOutButton
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(483, 16);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Log out";
+            this.LogOutButton.AutoSize = true;
+            this.LogOutButton.ForeColor = System.Drawing.Color.White;
+            this.LogOutButton.Location = new System.Drawing.Point(483, 16);
+            this.LogOutButton.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LogOutButton.Name = "LogOutButton";
+            this.LogOutButton.Size = new System.Drawing.Size(43, 13);
+            this.LogOutButton.TabIndex = 3;
+            this.LogOutButton.Text = "Log out";
+            this.LogOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
             // 
             // label6
             // 
@@ -178,7 +179,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label LogOutButton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;

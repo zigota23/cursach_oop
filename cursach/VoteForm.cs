@@ -37,5 +37,10 @@ namespace cursach
         {
             Application.Exit();
         }
+
+        private void LogOutButton_Click(object sender, EventArgs e)
+        {
+            DataBase.LogOut();
+        }
     }
 }

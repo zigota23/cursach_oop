@@ -98,6 +98,9 @@ namespace cursach
             }
 
         }
+        public static void LogOut() {
+            GlobalData.LoggedInUserId = Guid.Empty;
+        }
         public static void CreateTables()
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
@@ -155,7 +158,7 @@ namespace cursach
             return true;
         }
         */
-        public bool FindUsersVotes(int userId, int voteId)
+        public static bool FindUsersVotes(int userId, int voteId)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
@@ -198,7 +201,7 @@ namespace cursach
                 }
             }
         }
-        public void AddUserVoteResult(int userId, int voteId, bool result)
+        public static void AddUserVoteResult(int userId, int voteId, bool result)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
@@ -214,7 +217,7 @@ namespace cursach
                 }
             }
         }
-        public List<string> GetVoteTitles()
+        public static List<string> GetVoteTitles()
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {

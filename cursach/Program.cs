@@ -21,7 +21,7 @@ namespace cursach
             Application.SetCompatibleTextRenderingDefault(false);
             AuthorizationForm form = new AuthorizationForm();
             GlobalData.AuthorizationForm = form;
-            Application.Run(form);
+            Application.Run(GlobalData.AuthorizationForm);
                     }
     }
 }
