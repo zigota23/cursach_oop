@@ -40,10 +40,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.OnFormClose = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -70,7 +71,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(724, 25);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 20);
+            this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Log out";
             // 
@@ -80,7 +81,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(632, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 20);
+            this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Vote";
             // 
@@ -90,7 +91,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(560, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 20);
+            this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Contact";
             // 
@@ -100,7 +101,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(452, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 20);
+            this.label1.Size = new System.Drawing.Size(69, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Personal Info";
             // 
@@ -110,7 +111,7 @@
             this.label5.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.label5.Location = new System.Drawing.Point(40, 32);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 20);
+            this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 1;
             this.label5.Text = "First name:";
             // 
@@ -120,7 +121,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(45, 62);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 20);
+            this.label6.Size = new System.Drawing.Size(75, 13);
             this.label6.TabIndex = 2;
             this.label6.Text = "FirstName(DB)";
             // 
@@ -128,9 +129,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(45, 129);
+            this.label7.Location = new System.Drawing.Point(225, 61);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 20);
+            this.label7.Size = new System.Drawing.Size(76, 13);
             this.label7.TabIndex = 4;
             this.label7.Text = "LastName(DB)";
             // 
@@ -138,9 +139,9 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label8.Location = new System.Drawing.Point(40, 100);
+            this.label8.Location = new System.Drawing.Point(220, 32);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 20);
+            this.label8.Size = new System.Drawing.Size(59, 13);
             this.label8.TabIndex = 3;
             this.label8.Text = "Last name:";
             // 
@@ -148,9 +149,9 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(225, 62);
+            this.label9.Location = new System.Drawing.Point(45, 131);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(81, 20);
+            this.label9.Size = new System.Drawing.Size(53, 13);
             this.label9.TabIndex = 6;
             this.label9.Text = "Email(DB)";
             // 
@@ -158,39 +159,20 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label10.Location = new System.Drawing.Point(220, 32);
+            this.label10.Location = new System.Drawing.Point(40, 101);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 20);
+            this.label10.Size = new System.Drawing.Size(35, 13);
             this.label10.TabIndex = 5;
             this.label10.Text = "Email:";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(225, 129);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(111, 20);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "Password(DB)";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label12.Location = new System.Drawing.Point(220, 100);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(82, 20);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "Password:";
-            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.OnFormClose);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label10);
@@ -201,16 +183,45 @@
             this.panel2.Size = new System.Drawing.Size(394, 384);
             this.panel2.TabIndex = 9;
             // 
-            // OnFormClose
+            // label14
             // 
-            this.OnFormClose.AutoSize = true;
-            this.OnFormClose.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.OnFormClose.Location = new System.Drawing.Point(320, 328);
-            this.OnFormClose.Name = "OnFormClose";
-            this.OnFormClose.Size = new System.Drawing.Size(35, 20);
-            this.OnFormClose.TabIndex = 15;
-            this.OnFormClose.Text = "Exit";
-            this.OnFormClose.Click += new System.EventHandler(this.OnFormClose_Click);
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(226, 202);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(76, 13);
+            this.label14.TabIndex = 19;
+            this.label14.Text = "VotesCast(DB)";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(45, 202);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(92, 13);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "CreatedVotes(DB)";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label11.Location = new System.Drawing.Point(220, 168);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 13);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "Votes cast:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.label13.Location = new System.Drawing.Point(40, 168);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(76, 13);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Created votes:";
             // 
             // panel3
             // 
@@ -266,11 +277,12 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label OnFormClose;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label12;
     }
 }

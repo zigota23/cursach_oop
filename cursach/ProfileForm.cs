@@ -16,9 +16,13 @@ namespace cursach
         {
             InitializeComponent();
         }
-
-        private void OnFormClose_Click(object sender, EventArgs e)
+        protected override void OnFormClosing(FormClosingEventArgs e)
         {
+
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
             Application.Exit();
         }
     }

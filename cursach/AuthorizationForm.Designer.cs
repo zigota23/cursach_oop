@@ -32,7 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.codeeloGradientPanel1 = new CodeeloUI.Controls.CodeeloGradientPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.OnFormClose = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -81,7 +80,6 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel3.Controls.Add(this.OnFormClose);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
@@ -96,17 +94,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(340, 411);
             this.panel3.TabIndex = 8;
-            // 
-            // OnFormClose
-            // 
-            this.OnFormClose.AutoSize = true;
-            this.OnFormClose.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.OnFormClose.Location = new System.Drawing.Point(252, 355);
-            this.OnFormClose.Name = "OnFormClose";
-            this.OnFormClose.Size = new System.Drawing.Size(35, 20);
-            this.OnFormClose.TabIndex = 15;
-            this.OnFormClose.Text = "Exit";
-            this.OnFormClose.Click += new System.EventHandler(this.OnFormClose_Click);
             // 
             // label4
             // 
@@ -137,7 +124,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(92, 166);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
             // 
@@ -145,7 +132,7 @@
             // 
             this.passwordField.Location = new System.Drawing.Point(94, 189);
             this.passwordField.Name = "passwordField";
-            this.passwordField.Size = new System.Drawing.Size(160, 26);
+            this.passwordField.Size = new System.Drawing.Size(160, 20);
             this.passwordField.TabIndex = 1;
             this.passwordField.UseSystemPasswordChar = true;
             // 
@@ -181,7 +168,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(92, 105);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 20);
+            this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Email";
             // 
@@ -189,7 +176,7 @@
             // 
             this.emailField.Location = new System.Drawing.Point(94, 128);
             this.emailField.Name = "emailField";
-            this.emailField.Size = new System.Drawing.Size(160, 26);
+            this.emailField.Size = new System.Drawing.Size(160, 20);
             this.emailField.TabIndex = 0;
             // 
             // forgotPasswordButton
@@ -252,7 +239,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label OnFormClose;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

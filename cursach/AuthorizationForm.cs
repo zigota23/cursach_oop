@@ -43,9 +43,13 @@ namespace cursach
             GlobalData.AuthorizationForm.Hide();
             GlobalData.RegistrationForm.Show();
         }
-
-        private void OnFormClose_Click(object sender, EventArgs e)
+        protected override void OnFormClosing(FormClosingEventArgs e)
         {
+
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
             Application.Exit();
         }
     }
