@@ -15,7 +15,7 @@ namespace cursach
 {
     public partial class AuthorizationForm : Form
     {
-        private DataBase authorization = new DataBase();
+        
         public AuthorizationForm()
         {
             InitializeComponent();
@@ -25,7 +25,15 @@ namespace cursach
         {
             string email = emailField.Text;
             string password = passwordField.Text;
-            authorization.AutorizationUser(email, password, this);
+            try { 
+                Guid userId = DataBase.AutorizationUser(email, password);
+                GlobalData.LoggedInUserId = userId;
+                GlobalData.AuthorizationForm.Hide();
+                GlobalData.VoteForm.Show();
+            }
+            catch(Exception error) {
+                MessageBox.Show(error.Message);
+            }
         }
         
         private void SignUpButton_Click(object sender, EventArgs e)

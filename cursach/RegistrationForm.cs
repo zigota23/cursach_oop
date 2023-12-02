@@ -30,14 +30,14 @@ namespace cursach
             string lastname = lastNameField.Text;
             string confirmPassword = repeatPasswordField.Text;
 
-            if(!DataBase.IsConfirmedPassword(password, confirmPassword))
+            if(!Validation.IsConfirmedPassword(password, confirmPassword))
             {
                 MessageBox.Show("Пароли не совпадают", "Проверка данных", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             else
             {
-                if (DataBase.IsValidEmail(email) && DataBase.IsValidPassword(password))
+                if (Validation.IsValidEmail(email) && Validation.IsValidPassword(password))
                 {
                     registration.RegisterUser(email, password, firstname, lastname);
                     GlobalData.RegistrationForm.Hide();
