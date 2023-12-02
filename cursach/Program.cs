@@ -16,12 +16,14 @@ namespace cursach
         static void Main()
         {
             DataBase.CreateTables();
-            //DataBase.CreateVote("test2", "test????", 1);
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
             AuthorizationForm form = new AuthorizationForm();
             GlobalData.AuthorizationForm = form;
+
             Application.Run(GlobalData.AuthorizationForm);
-                    }
+        }
     }
 }

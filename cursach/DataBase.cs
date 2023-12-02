@@ -121,43 +121,7 @@ namespace cursach
 
             }
         }
-        /*public void FindUsersVotesResult()
-        {
-            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
-            {
-                connection.Open();
 
-                using (NpgsqlCommand cmd = new NpgsqlCommand())
-                {
-                    cmd.Connection = connection;
-                    cmd.CommandText = "SELECT v.id AS VoteID, v.title AS VoteTitle, v.descrption AS VoteDescription, vur.result AS VoteResult FROM votes_users_result vur JOIN votes v ON vur.voteId = v.id WHERE vur.userId = 1;";
-                    //cmd.ExecuteNonQuery();
-                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
-                    {
-
-                        while (reader.Read())
-                        {
-                            Console.WriteLine("{0}\t{1}\t{2}", reader.GetInt32(0),
-                                reader.GetString(1), reader.GetString(2));
-                        }
-
-                        if (reader.Read())
-                        {
-                            string result = reader["result"].ToString();
-                            string voteId = reader["voteId"].ToString();
-                            string msg = voteId + ":" + result;
-                            Console.WriteLine(msg);
-                        }
-                    }
-                }
-
-            }
-        }
-        public Boolean FindUsersVotes(int userId, int voteId)
-        {
-            return true;
-        }
-        */
         public static bool FindUsersVotes(int userId, int voteId)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))

@@ -34,9 +34,10 @@
             // 
             // CreateNewVotingButton
             // 
-            this.CreateNewVotingButton.Location = new System.Drawing.Point(538, 321);
+            this.CreateNewVotingButton.Location = new System.Drawing.Point(807, 494);
+            this.CreateNewVotingButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CreateNewVotingButton.Name = "CreateNewVotingButton";
-            this.CreateNewVotingButton.Size = new System.Drawing.Size(191, 71);
+            this.CreateNewVotingButton.Size = new System.Drawing.Size(286, 109);
             this.CreateNewVotingButton.TabIndex = 0;
             this.CreateNewVotingButton.Text = "button1";
             this.CreateNewVotingButton.UseVisualStyleBackColor = true;
@@ -44,19 +45,21 @@
             // 
             // textBoxNewVotingQuestion
             // 
-            this.textBoxNewVotingQuestion.Location = new System.Drawing.Point(41, 96);
+            this.textBoxNewVotingQuestion.Location = new System.Drawing.Point(62, 148);
+            this.textBoxNewVotingQuestion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxNewVotingQuestion.Multiline = true;
             this.textBoxNewVotingQuestion.Name = "textBoxNewVotingQuestion";
-            this.textBoxNewVotingQuestion.Size = new System.Drawing.Size(429, 124);
+            this.textBoxNewVotingQuestion.Size = new System.Drawing.Size(642, 189);
             this.textBoxNewVotingQuestion.TabIndex = 1;
             // 
             // VoteAddForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.textBoxNewVotingQuestion);
             this.Controls.Add(this.CreateNewVotingButton);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "VoteAddForm";
             this.Text = "VoteAddForm";
             this.ResumeLayout(false);
