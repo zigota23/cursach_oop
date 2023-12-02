@@ -30,25 +30,25 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuthorizationForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.codeeloGradientPanel1 = new CodeeloUI.Controls.CodeeloGradientPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.OnFormClose = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.passwordField = new System.Windows.Forms.TextBox();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.SignUpButton = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.emailField = new System.Windows.Forms.TextBox();
+            this.forgotPasswordButton = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.forgotPasswordButton = new System.Windows.Forms.Label();
-            this.emailField = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.SignUpButton = new System.Windows.Forms.Label();
-            this.loginButton = new System.Windows.Forms.Button();
-            this.passwordField = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.OnFormClose = new System.Windows.Forms.Label();
-            this.codeeloGradientPanel1 = new CodeeloUI.Controls.CodeeloGradientPanel();
             this.panel1.SuspendLayout();
+            this.codeeloGradientPanel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.codeeloGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -60,6 +60,149 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(734, 411);
             this.panel1.TabIndex = 7;
+            // 
+            // codeeloGradientPanel1
+            // 
+            this.codeeloGradientPanel1.AccessibleRole = null;
+            this.codeeloGradientPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.codeeloGradientPanel1.CausesValidation = false;
+            this.codeeloGradientPanel1.ColorFillFirst = System.Drawing.Color.Fuchsia;
+            this.codeeloGradientPanel1.ColorFillSecond = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(152)))), ((int)(((byte)(255)))));
+            this.codeeloGradientPanel1.Controls.Add(this.panel3);
+            this.codeeloGradientPanel1.Controls.Add(this.panel2);
+            this.codeeloGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.codeeloGradientPanel1.DrawGradient = true;
+            this.codeeloGradientPanel1.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.codeeloGradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.codeeloGradientPanel1.Name = "codeeloGradientPanel1";
+            this.codeeloGradientPanel1.Size = new System.Drawing.Size(734, 411);
+            this.codeeloGradientPanel1.TabIndex = 9;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel3.Controls.Add(this.OnFormClose);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.passwordField);
+            this.panel3.Controls.Add(this.loginButton);
+            this.panel3.Controls.Add(this.SignUpButton);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.emailField);
+            this.panel3.Controls.Add(this.forgotPasswordButton);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(394, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(340, 411);
+            this.panel3.TabIndex = 8;
+            // 
+            // OnFormClose
+            // 
+            this.OnFormClose.AutoSize = true;
+            this.OnFormClose.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.OnFormClose.Location = new System.Drawing.Point(252, 355);
+            this.OnFormClose.Name = "OnFormClose";
+            this.OnFormClose.Size = new System.Drawing.Size(35, 20);
+            this.OnFormClose.TabIndex = 15;
+            this.OnFormClose.Text = "Exit";
+            this.OnFormClose.Click += new System.EventHandler(this.OnFormClose_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(93, 245);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 9, 2, 2);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 17);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Not a user ?";
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(86, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(160, 48);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Login";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(92, 166);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Password";
+            // 
+            // passwordField
+            // 
+            this.passwordField.Location = new System.Drawing.Point(94, 189);
+            this.passwordField.Name = "passwordField";
+            this.passwordField.Size = new System.Drawing.Size(160, 26);
+            this.passwordField.TabIndex = 1;
+            this.passwordField.UseSystemPasswordChar = true;
+            // 
+            // loginButton
+            // 
+            this.loginButton.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.loginButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loginButton.Location = new System.Drawing.Point(94, 278);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(160, 34);
+            this.loginButton.TabIndex = 4;
+            this.loginButton.Text = "LOGIN";
+            this.loginButton.UseVisualStyleBackColor = false;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            // 
+            // SignUpButton
+            // 
+            this.SignUpButton.AutoSize = true;
+            this.SignUpButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SignUpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignUpButton.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.SignUpButton.Location = new System.Drawing.Point(192, 245);
+            this.SignUpButton.Margin = new System.Windows.Forms.Padding(2, 9, 2, 2);
+            this.SignUpButton.Name = "SignUpButton";
+            this.SignUpButton.Size = new System.Drawing.Size(56, 17);
+            this.SignUpButton.TabIndex = 6;
+            this.SignUpButton.Text = "Sign up";
+            this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(92, 105);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Email";
+            // 
+            // emailField
+            // 
+            this.emailField.Location = new System.Drawing.Point(94, 128);
+            this.emailField.Name = "emailField";
+            this.emailField.Size = new System.Drawing.Size(160, 26);
+            this.emailField.TabIndex = 0;
+            // 
+            // forgotPasswordButton
+            // 
+            this.forgotPasswordButton.AutoSize = true;
+            this.forgotPasswordButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.forgotPasswordButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.forgotPasswordButton.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.forgotPasswordButton.Location = new System.Drawing.Point(93, 218);
+            this.forgotPasswordButton.Name = "forgotPasswordButton";
+            this.forgotPasswordButton.Size = new System.Drawing.Size(130, 17);
+            this.forgotPasswordButton.TabIndex = 5;
+            this.forgotPasswordButton.Text = "Forgon Password ?";
             // 
             // panel2
             // 
@@ -83,149 +226,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel3.Controls.Add(this.OnFormClose);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.passwordField);
-            this.panel3.Controls.Add(this.loginButton);
-            this.panel3.Controls.Add(this.SignUpButton);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.emailField);
-            this.panel3.Controls.Add(this.forgotPasswordButton);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(394, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(340, 411);
-            this.panel3.TabIndex = 8;
-            // 
-            // forgotPasswordButton
-            // 
-            this.forgotPasswordButton.AutoSize = true;
-            this.forgotPasswordButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.forgotPasswordButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.forgotPasswordButton.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.forgotPasswordButton.Location = new System.Drawing.Point(93, 218);
-            this.forgotPasswordButton.Name = "forgotPasswordButton";
-            this.forgotPasswordButton.Size = new System.Drawing.Size(130, 17);
-            this.forgotPasswordButton.TabIndex = 5;
-            this.forgotPasswordButton.Text = "Forgon Password ?";
-            // 
-            // emailField
-            // 
-            this.emailField.Location = new System.Drawing.Point(94, 128);
-            this.emailField.Name = "emailField";
-            this.emailField.Size = new System.Drawing.Size(160, 26);
-            this.emailField.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(92, 105);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Email";
-            // 
-            // SignUpButton
-            // 
-            this.SignUpButton.AutoSize = true;
-            this.SignUpButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SignUpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SignUpButton.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.SignUpButton.Location = new System.Drawing.Point(192, 245);
-            this.SignUpButton.Margin = new System.Windows.Forms.Padding(2, 9, 2, 2);
-            this.SignUpButton.Name = "SignUpButton";
-            this.SignUpButton.Size = new System.Drawing.Size(56, 17);
-            this.SignUpButton.TabIndex = 6;
-            this.SignUpButton.Text = "Sign up";
-            this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
-            // 
-            // loginButton
-            // 
-            this.loginButton.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.loginButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.loginButton.Location = new System.Drawing.Point(94, 278);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(160, 34);
-            this.loginButton.TabIndex = 4;
-            this.loginButton.Text = "LOGIN";
-            this.loginButton.UseVisualStyleBackColor = false;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
-            // 
-            // passwordField
-            // 
-            this.passwordField.Location = new System.Drawing.Point(94, 189);
-            this.passwordField.Name = "passwordField";
-            this.passwordField.Size = new System.Drawing.Size(160, 26);
-            this.passwordField.TabIndex = 1;
-            this.passwordField.UseSystemPasswordChar = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(92, 166);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Password";
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(86, 39);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 48);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Login";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(93, 245);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 9, 2, 2);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 17);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Not a user ?";
-            // 
-            // OnFormClose
-            // 
-            this.OnFormClose.AutoSize = true;
-            this.OnFormClose.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.OnFormClose.Location = new System.Drawing.Point(252, 355);
-            this.OnFormClose.Name = "OnFormClose";
-            this.OnFormClose.Size = new System.Drawing.Size(35, 20);
-            this.OnFormClose.TabIndex = 15;
-            this.OnFormClose.Text = "Exit";
-            this.OnFormClose.Click += new System.EventHandler(this.OnFormClose_Click);
-            // 
-            // codeeloGradientPanel1
-            // 
-            this.codeeloGradientPanel1.AccessibleRole = null;
-            this.codeeloGradientPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.codeeloGradientPanel1.CausesValidation = false;
-            this.codeeloGradientPanel1.ColorFillFirst = System.Drawing.Color.Fuchsia;
-            this.codeeloGradientPanel1.ColorFillSecond = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(152)))), ((int)(((byte)(255)))));
-            this.codeeloGradientPanel1.Controls.Add(this.panel3);
-            this.codeeloGradientPanel1.Controls.Add(this.panel2);
-            this.codeeloGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.codeeloGradientPanel1.DrawGradient = true;
-            this.codeeloGradientPanel1.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            this.codeeloGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.codeeloGradientPanel1.Name = "codeeloGradientPanel1";
-            this.codeeloGradientPanel1.Size = new System.Drawing.Size(734, 411);
-            this.codeeloGradientPanel1.TabIndex = 9;
-            // 
             // AuthorizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -239,11 +239,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AuthorizationForm";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.codeeloGradientPanel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.codeeloGradientPanel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
