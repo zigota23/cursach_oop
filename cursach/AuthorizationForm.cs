@@ -30,6 +30,8 @@ namespace cursach
                 GlobalData.LoggedInUserId = userId;
                 GlobalData.AuthorizationForm.Hide();
                 GlobalData.VoteForm.Show();
+                emailField.Text = "";
+                passwordField.Text = "";
             }
             catch(Exception error) {
                 MessageBox.Show(error.Message);
