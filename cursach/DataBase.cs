@@ -15,7 +15,7 @@ namespace cursach
     {
         private static string connectionString = "Server = localhost ; port = 5432; user id = postgres; password = root; database = cursach;";
         private int loggedInUserId;
-        public void AutorizationUser(string email, string password, AuthorizationForm authForm)
+        public static Guid AutorizationUser(string email, string password)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
@@ -36,23 +36,24 @@ namespace cursach
                             {
                                 MessageBox.Show("Login successful");
                                 GlobalData.LoggedInUserId = userId;
-                                VoteForm form = new VoteForm();
-                                form.Show();
-                                authForm.Hide();
+                                connection.Close();
+                                return userId;
                             }
                             else
                             {
-                                MessageBox.Show("Invalid password");
+                                connection.Close();
+                                throw new Exception("Invalid password");
                             }
                         }
                         else
                         {
-                            MessageBox.Show("User not found");
+                            connection.Close();
+                            throw new Exception("User not found");
                         }
                     }
                 }
 
-                connection.Close();
+                
 
 
             }
@@ -100,6 +101,7 @@ namespace cursach
         }
         public static void LogOut() {
             GlobalData.LoggedInUserId = Guid.Empty;
+            
         }
         public static void CreateTables()
         {
