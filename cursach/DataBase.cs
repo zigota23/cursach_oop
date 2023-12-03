@@ -14,7 +14,6 @@ namespace cursach
     internal class DataBase
     {
         private static string connectionString = "Server = localhost ; port = 5432; user id = postgres; password = root; database = cursach;";
-        private int loggedInUserId;
         public static Guid AutorizationUser(string email, string password)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
@@ -101,9 +100,8 @@ namespace cursach
         }
         public static void LogOut() {
             GlobalData.LoggedInUserId = Guid.Empty;
-            GlobalData.VoteForm.Hide();
+            GlobalData.MainApp.Hide();
             GlobalData.AuthorizationForm.Show();
-            
         }
         public static void CreateTables()
         {

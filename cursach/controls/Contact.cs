@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace cursach
+namespace cursach.controls
 {
-    public partial class ForgotPassword : Form
+    public partial class Contact : UserControl
     {
-        public ForgotPassword()
+        public Contact()
         {
             InitializeComponent();
         }
-
     }
 }

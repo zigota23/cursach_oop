@@ -11,10 +11,10 @@ namespace cursach
         public static Guid LoggedInUserId { get; set; }
         public static AuthorizationForm AuthorizationForm { get; set; }
         public static RegistrationForm RegistrationForm  = new RegistrationForm();
+        public static MainApp MainApp  = new MainApp();
         public static ProfileForm ProfileForm  = new ProfileForm();
         public static VoteAddForm VoteAddForm = new VoteAddForm();
         public static VoteForm VoteForm = new VoteForm();
-        public static ContactForm ContactForm = new ContactForm();
         public static ForgotPassword ForgotPassword = new ForgotPassword();
 
     }

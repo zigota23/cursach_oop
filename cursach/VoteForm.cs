@@ -45,5 +45,11 @@ namespace cursach
 
             Application.Exit();
         }
+
+        private void PersonalInfo_Click(object sender, EventArgs e)
+        {
+            GlobalData.VoteForm.Hide();
+            GlobalData.ProfileForm.Show();
+        }
     }
 }
