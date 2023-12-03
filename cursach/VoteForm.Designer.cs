@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.codeeloGradientPanel1 = new CodeeloUI.Controls.CodeeloGradientPanel();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.descriptionLabel = new System.Windows.Forms.Label();
-            this.noButton = new System.Windows.Forms.Button();
             this.yesButton = new System.Windows.Forms.Button();
+            this.noButton = new System.Windows.Forms.Button();
+            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.codeeloGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,17 +55,29 @@
             this.codeeloGradientPanel1.Size = new System.Drawing.Size(410, 351);
             this.codeeloGradientPanel1.TabIndex = 0;
             // 
-            // titleLabel
+            // yesButton
             // 
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.titleLabel.Location = new System.Drawing.Point(36, 32);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(52, 26);
-            this.titleLabel.TabIndex = 0;
-            this.titleLabel.Text = "Title";
+            this.yesButton.BackColor = System.Drawing.Color.LimeGreen;
+            this.yesButton.Location = new System.Drawing.Point(247, 243);
+            this.yesButton.Name = "yesButton";
+            this.yesButton.Size = new System.Drawing.Size(117, 41);
+            this.yesButton.TabIndex = 3;
+            this.yesButton.Text = "Yes";
+            this.yesButton.UseVisualStyleBackColor = false;
+            this.yesButton.Click += new System.EventHandler(this.yesButton_Click);
+            // 
+            // noButton
+            // 
+            this.noButton.BackColor = System.Drawing.Color.Firebrick;
+            this.noButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noButton.ForeColor = System.Drawing.Color.White;
+            this.noButton.Location = new System.Drawing.Point(47, 243);
+            this.noButton.Name = "noButton";
+            this.noButton.Size = new System.Drawing.Size(117, 41);
+            this.noButton.TabIndex = 2;
+            this.noButton.Text = "No";
+            this.noButton.UseVisualStyleBackColor = false;
+            this.noButton.Click += new System.EventHandler(this.noButton_Click);
             // 
             // descriptionLabel
             // 
@@ -79,27 +91,17 @@
             this.descriptionLabel.TabIndex = 1;
             this.descriptionLabel.Text = "description";
             // 
-            // noButton
+            // titleLabel
             // 
-            this.noButton.BackColor = System.Drawing.Color.Firebrick;
-            this.noButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noButton.ForeColor = System.Drawing.Color.White;
-            this.noButton.Location = new System.Drawing.Point(47, 243);
-            this.noButton.Name = "noButton";
-            this.noButton.Size = new System.Drawing.Size(117, 41);
-            this.noButton.TabIndex = 2;
-            this.noButton.Text = "No";
-            this.noButton.UseVisualStyleBackColor = false;
-            // 
-            // yesButton
-            // 
-            this.yesButton.BackColor = System.Drawing.Color.LimeGreen;
-            this.yesButton.Location = new System.Drawing.Point(247, 243);
-            this.yesButton.Name = "yesButton";
-            this.yesButton.Size = new System.Drawing.Size(117, 41);
-            this.yesButton.TabIndex = 3;
-            this.yesButton.Text = "Yes";
-            this.yesButton.UseVisualStyleBackColor = false;
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.titleLabel.Location = new System.Drawing.Point(36, 32);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(52, 26);
+            this.titleLabel.TabIndex = 0;
+            this.titleLabel.Text = "Title";
             // 
             // VoteForm
             // 

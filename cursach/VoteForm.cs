@@ -13,13 +13,30 @@ namespace cursach
 {
     public partial class VoteForm : Form
     {
-        
+        private Guid voteId;
         public VoteForm(Guid voteId,string title,string description)
         {
             InitializeComponent();
             titleLabel.Text = title;
             descriptionLabel.Text = description;
+            this.voteId = voteId;
+
         }
 
+        private void setResult(bool result)
+        {
+            DataBase.AddUserVoteResult(GlobalData.LoggedInUserId,this.voteId,result);
+            MessageBox.Show("Thanks!");
+            this.Close();
+        }
+        private void noButton_Click(object sender, EventArgs e)
+        {
+            setResult(false);
+        }
+
+        private void yesButton_Click(object sender, EventArgs e)
+        {
+            setResult(true);
+        }
     }
 }

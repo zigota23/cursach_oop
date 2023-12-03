@@ -168,7 +168,7 @@ namespace cursach
                 }
             }
         }
-        public static void AddUserVoteResult(int userId, int voteId, bool result)
+        public static void AddUserVoteResult(Guid userId, Guid voteId, bool result)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
@@ -179,7 +179,6 @@ namespace cursach
                     command.Parameters.AddWithValue("@UserId", userId);
                     command.Parameters.AddWithValue("@VoteId", voteId);
                     command.Parameters.AddWithValue("@Result", result);
-
                     command.ExecuteNonQuery();
                 }
             }
@@ -303,7 +302,7 @@ namespace cursach
                     createdQuestions = Convert.ToInt32(createdQuestionsCommand.ExecuteScalar());
                 }
 
-                string answeredQuestionsSql = "SELECT COUNT(*) FROM votes_users_result WHERE userId = @userId AND result = true";
+                string answeredQuestionsSql = "SELECT COUNT(*) FROM votes_users_result WHERE userId = @userId";
                 using (NpgsqlCommand answeredQuestionsCommand = new NpgsqlCommand(answeredQuestionsSql, connection))
                 {
                     answeredQuestionsCommand.Parameters.AddWithValue("@userId", userId);
