@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.addVoteButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // addVoteButton
@@ -44,11 +45,20 @@
             this.addVoteButton.UseVisualStyleBackColor = false;
             this.addVoteButton.Click += new System.EventHandler(this.addVoteButton_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 52);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(850, 308);
+            this.panel1.TabIndex = 1;
+            // 
             // VoteList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.addVoteButton);
             this.Name = "VoteList";
             this.Size = new System.Drawing.Size(850, 360);
@@ -59,5 +69,6 @@
         #endregion
 
         private System.Windows.Forms.Button addVoteButton;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -116,6 +116,12 @@
     <Compile Include="controls\Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
+    <Compile Include="controls\VoteItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\VoteItem.Designer.cs">
+      <DependentUpon>VoteItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="controls\VoteList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="controls\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\VoteItem.resx">
+      <DependentUpon>VoteItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controls\VoteList.resx">
       <DependentUpon>VoteList.cs</DependentUpon>
