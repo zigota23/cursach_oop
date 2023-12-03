@@ -190,6 +190,7 @@
             this.forgotPasswordButton.Size = new System.Drawing.Size(130, 17);
             this.forgotPasswordButton.TabIndex = 5;
             this.forgotPasswordButton.Text = "Forgon Password ?";
+            this.forgotPasswordButton.Click += new System.EventHandler(this.forgotPasswordButton_Click);
             // 
             // panel2
             // 
