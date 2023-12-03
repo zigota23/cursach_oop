@@ -15,7 +15,7 @@ namespace cursach
         public static VoteAddForm VoteAddForm = new VoteAddForm();
         public static VoteForm VoteForm = new VoteForm();
         public static ContactForm ContactForm = new ContactForm();
-
+        public static ForgotPassword ForgotPassword = new ForgotPassword();
 
     }
 }

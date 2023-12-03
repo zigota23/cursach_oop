@@ -52,5 +52,11 @@ namespace cursach
 
             Application.Exit();
         }
+
+        private void forgotPasswordButton_Click(object sender, EventArgs e)
+        {
+            GlobalData.AuthorizationForm.Hide();
+            GlobalData.ForgotPassword.Show();
+        }
     }
 }
