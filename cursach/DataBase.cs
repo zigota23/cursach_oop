@@ -14,7 +14,6 @@ namespace cursach
     internal class DataBase
     {
         private static string connectionString = "Server = localhost ; port = 5432; user id = postgres; password = root; database = cursach;";
-        private int loggedInUserId;
         public static Guid AutorizationUser(string email, string password)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
