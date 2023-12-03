@@ -49,5 +49,10 @@ namespace cursach
                 connection.Close();
             }
         }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            DataBase.CreateVote(titleField.Text,descriptionField.Text,GlobalData.LoggedInUserId);
+        }
     }
 }

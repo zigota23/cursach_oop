@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profile));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblVoteCast = new System.Windows.Forms.Label();
+            this.lblCreatedVotes = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblFirstName = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
@@ -49,43 +49,43 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.lblVoteCast);
+            this.panel2.Controls.Add(this.lblCreatedVotes);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.lblEmail);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.lblFirstName);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.lblLastName);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(456, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(394, 360);
             this.panel2.TabIndex = 10;
             // 
-            // label14
+            // lblVoteCast
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(226, 202);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(117, 20);
-            this.label14.TabIndex = 19;
-            this.label14.Text = "VotesCast(DB)";
+            this.lblVoteCast.AutoSize = true;
+            this.lblVoteCast.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVoteCast.ForeColor = System.Drawing.Color.White;
+            this.lblVoteCast.Location = new System.Drawing.Point(226, 202);
+            this.lblVoteCast.Name = "lblVoteCast";
+            this.lblVoteCast.Size = new System.Drawing.Size(117, 20);
+            this.lblVoteCast.TabIndex = 19;
+            this.lblVoteCast.Text = "VotesCast(DB)";
             // 
-            // label12
+            // lblCreatedVotes
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(45, 202);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(141, 20);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "CreatedVotes(DB)";
+            this.lblCreatedVotes.AutoSize = true;
+            this.lblCreatedVotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreatedVotes.ForeColor = System.Drawing.Color.White;
+            this.lblCreatedVotes.Location = new System.Drawing.Point(45, 202);
+            this.lblCreatedVotes.Name = "lblCreatedVotes";
+            this.lblCreatedVotes.Size = new System.Drawing.Size(141, 20);
+            this.lblCreatedVotes.TabIndex = 18;
+            this.lblCreatedVotes.Text = "CreatedVotes(DB)";
             // 
             // label11
             // 
@@ -109,16 +109,16 @@
             this.label13.TabIndex = 16;
             this.label13.Text = "Created votes:";
             // 
-            // label9
+            // lblEmail
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(45, 131);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(81, 20);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Email(DB)";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
+            this.lblEmail.Location = new System.Drawing.Point(45, 131);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(81, 20);
+            this.lblEmail.TabIndex = 6;
+            this.lblEmail.Text = "Email(DB)";
             // 
             // label5
             // 
@@ -131,16 +131,16 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "First name:";
             // 
-            // label6
+            // lblFirstName
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(45, 62);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 20);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "FirstName(DB)";
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.ForeColor = System.Drawing.Color.White;
+            this.lblFirstName.Location = new System.Drawing.Point(45, 62);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(115, 20);
+            this.lblFirstName.TabIndex = 2;
+            this.lblFirstName.Text = "FirstName(DB)";
             // 
             // label8
             // 
@@ -164,16 +164,16 @@
             this.label10.TabIndex = 5;
             this.label10.Text = "Email:";
             // 
-            // label7
+            // lblLastName
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(225, 61);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 20);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "LastName(DB)";
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.ForeColor = System.Drawing.Color.White;
+            this.lblLastName.Location = new System.Drawing.Point(225, 61);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(115, 20);
+            this.lblLastName.TabIndex = 4;
+            this.lblLastName.Text = "LastName(DB)";
             // 
             // panel3
             // 
@@ -214,16 +214,16 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblVoteCast;
+        private System.Windows.Forms.Label lblCreatedVotes;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

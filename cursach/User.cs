@@ -9,11 +9,11 @@ namespace cursach
 {
     internal class User
     {
-       string email { get; set; }
-       string firstName { get; set; }
-       string lastName { get; set; }
-       int createdQuestions {  get; set; }
-       int answeredQuestions {  get; set; }
+       public string email { get; set; }
+       public string firstName { get; set; }
+       public string lastName { get; set; }
+       public int createdQuestions {  get; set; }
+       public int answeredQuestions {  get; set; }
         public User(string email, string firstName, string lastName, int createdQuestions, int answeredQuestions) {
             this.email = email;
             this.firstName = firstName;

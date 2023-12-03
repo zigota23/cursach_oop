@@ -30,11 +30,11 @@
         {
             this.codeeloGradientPanel1 = new CodeeloUI.Controls.CodeeloGradientPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.repeatPasswordField = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.passwordField = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.loginButton = new System.Windows.Forms.Button();
+            this.resetButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.emailField = new System.Windows.Forms.TextBox();
             this.codeeloGradientPanel1.SuspendLayout();
@@ -48,11 +48,11 @@
             this.codeeloGradientPanel1.ColorFillFirst = System.Drawing.Color.Fuchsia;
             this.codeeloGradientPanel1.ColorFillSecond = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(152)))), ((int)(((byte)(255)))));
             this.codeeloGradientPanel1.Controls.Add(this.label3);
-            this.codeeloGradientPanel1.Controls.Add(this.textBox2);
+            this.codeeloGradientPanel1.Controls.Add(this.repeatPasswordField);
             this.codeeloGradientPanel1.Controls.Add(this.label2);
-            this.codeeloGradientPanel1.Controls.Add(this.textBox1);
+            this.codeeloGradientPanel1.Controls.Add(this.passwordField);
             this.codeeloGradientPanel1.Controls.Add(this.label5);
-            this.codeeloGradientPanel1.Controls.Add(this.loginButton);
+            this.codeeloGradientPanel1.Controls.Add(this.resetButton);
             this.codeeloGradientPanel1.Controls.Add(this.label1);
             this.codeeloGradientPanel1.Controls.Add(this.emailField);
             this.codeeloGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -75,13 +75,13 @@
             this.label3.TabIndex = 41;
             this.label3.Text = "Repeat New Password";
             // 
-            // textBox2
+            // repeatPasswordField
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(48, 207);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(277, 26);
-            this.textBox2.TabIndex = 40;
+            this.repeatPasswordField.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.repeatPasswordField.Location = new System.Drawing.Point(48, 207);
+            this.repeatPasswordField.Name = "repeatPasswordField";
+            this.repeatPasswordField.Size = new System.Drawing.Size(277, 26);
+            this.repeatPasswordField.TabIndex = 40;
             // 
             // label2
             // 
@@ -95,13 +95,13 @@
             this.label2.TabIndex = 39;
             this.label2.Text = "New Password";
             // 
-            // textBox1
+            // passwordField
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(48, 150);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(277, 26);
-            this.textBox1.TabIndex = 38;
+            this.passwordField.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordField.Location = new System.Drawing.Point(48, 150);
+            this.passwordField.Name = "passwordField";
+            this.passwordField.Size = new System.Drawing.Size(277, 26);
+            this.passwordField.TabIndex = 38;
             // 
             // label5
             // 
@@ -114,17 +114,18 @@
             this.label5.TabIndex = 37;
             this.label5.Text = "Password recovery";
             // 
-            // loginButton
+            // resetButton
             // 
-            this.loginButton.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.loginButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.Location = new System.Drawing.Point(117, 246);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(147, 34);
-            this.loginButton.TabIndex = 34;
-            this.loginButton.Text = "Reset";
-            this.loginButton.UseVisualStyleBackColor = false;
+            this.resetButton.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.resetButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.resetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetButton.Location = new System.Drawing.Point(117, 246);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(147, 34);
+            this.resetButton.TabIndex = 34;
+            this.resetButton.Text = "Reset";
+            this.resetButton.UseVisualStyleBackColor = false;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
             // label1
             // 
@@ -167,11 +168,11 @@
 
         private CodeeloUI.Controls.CodeeloGradientPanel codeeloGradientPanel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox repeatPasswordField;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox passwordField;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox emailField;
     }

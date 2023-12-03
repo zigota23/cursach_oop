@@ -52,7 +52,7 @@ namespace cursach
                     }
                 }
 
-                
+
 
 
             }
@@ -98,7 +98,8 @@ namespace cursach
             }
 
         }
-        public static void LogOut() {
+        public static void LogOut()
+        {
             GlobalData.LoggedInUserId = Guid.Empty;
             GlobalData.MainApp.Hide();
             GlobalData.AuthorizationForm.Show();
@@ -148,7 +149,7 @@ namespace cursach
             }
         }
 
-        public static void CreateVote(string title, string description,Guid creatorId)
+        public static void CreateVote(string title, string description, Guid creatorId)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
@@ -162,7 +163,7 @@ namespace cursach
                     command.Parameters.AddWithValue("@Description", description);
                     command.Parameters.AddWithValue("@creatorId", creatorId);
                     command.Parameters.AddWithValue("@createAt", sqlFormattedDate);
-                    
+
                     command.ExecuteNonQuery();
                 }
             }
@@ -223,7 +224,7 @@ namespace cursach
                         {
                             return reader.GetGuid(0);
                         }
-                        throw new InvalidOperationException("can`t find by this title");;
+                        throw new InvalidOperationException("can`t find by this title"); ;
                     }
                 }
             }
@@ -287,17 +288,17 @@ namespace cursach
         }
         public static User GetInfoById(Guid userId)
         {
-            
             int createdQuestions = 0;
             int answeredQuestions = 0;
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
                 connection.Open();
 
-                string infoSql = "SELECT email,firstName,lastName FROM user WHERE id = @userId";
+                string infoSql = "SELECT email,firstName,lastName FROM users WHERE id = @userId";
                 string createdQuestionsSql = "SELECT COUNT(*) FROM votes WHERE creatorId = @userId";
                 using (NpgsqlCommand createdQuestionsCommand = new NpgsqlCommand(createdQuestionsSql, connection))
                 {
+                    
                     createdQuestionsCommand.Parameters.AddWithValue("@userId", userId);
                     createdQuestions = Convert.ToInt32(createdQuestionsCommand.ExecuteScalar());
                 }
@@ -320,18 +321,53 @@ namespace cursach
                             string firstName = reader["firstName"].ToString();
                             string lastName = reader["lastName"].ToString();
                             connection.Close();
-                           return new User(email,firstName,lastName,createdQuestions,answeredQuestions);
-                            
+                            return new User(email, firstName, lastName, createdQuestions, answeredQuestions);
+
                         }
-                        else {
-                            connection.Close(); throw new Exception("error"); }
+                        else
+                        {
+                            connection.Close(); throw new Exception("error");
+                        }
                     }
                 }
-                
+
             }
 
-            
+
         }
-        
+        public static void ForgotPassword(string email, string pass)
+        {
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+                using (NpgsqlCommand cmdCheckUser = new NpgsqlCommand("SELECT COUNT(*) FROM users WHERE email = @email", connection))
+                {
+                    cmdCheckUser.Parameters.AddWithValue("email", email);
+
+                    int userCount = Convert.ToInt32(cmdCheckUser.ExecuteScalar());
+
+                    if (userCount == 0)
+                    {
+                        MessageBox.Show("User with this email doesn`t exist");
+                        connection.Close();
+                    }
+                    else
+                    {
+                        using (NpgsqlCommand cmd = new NpgsqlCommand())
+                        {
+                            string hashpass = BCrypt.Net.BCrypt.HashPassword(pass);
+                            cmd.Connection = connection;
+                            cmd.CommandText = "UPDATE users SET hashpass = @hashpass WHERE email = @email";
+                            cmd.Parameters.AddWithValue("@email", email);
+                            cmd.Parameters.AddWithValue("@hashpass", hashpass);
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Password changed.");
+                            connection.Close();
+                        }
+                    }
+                }
+            }
+
+        }
     }
 }
