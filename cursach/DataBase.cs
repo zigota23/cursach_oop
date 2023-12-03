@@ -100,9 +100,8 @@ namespace cursach
         }
         public static void LogOut() {
             GlobalData.LoggedInUserId = Guid.Empty;
-            GlobalData.VoteForm.Hide();
+            GlobalData.MainApp.Hide();
             GlobalData.AuthorizationForm.Show();
-            
         }
         public static void CreateTables()
         {

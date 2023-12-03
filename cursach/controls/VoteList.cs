@@ -8,14 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace cursach
+namespace cursach.controls
 {
-    public partial class ForgotPassword : Form
+    public partial class VoteList : UserControl
     {
-        public ForgotPassword()
+        public VoteList()
         {
             InitializeComponent();
         }
 
+        private void addVoteButton_Click(object sender, EventArgs e)
+        {
+            VoteAddForm voteAddForm = new VoteAddForm();
+            voteAddForm.ShowDialog();
+        }
     }
 }

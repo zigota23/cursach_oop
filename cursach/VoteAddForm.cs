@@ -21,7 +21,7 @@ namespace cursach
 
         private void CreateNewVotingButton_Click(object sender, EventArgs e)
         {
-            string newVotingQuestion = textBoxNewVotingQuestion.Text;
+            string newVotingQuestion = titleField.Text;
 
             if (!string.IsNullOrEmpty(newVotingQuestion))
             {
@@ -48,15 +48,6 @@ namespace cursach
                 }
                 connection.Close();
             }
-        }
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-
-            base.OnFormClosing(e);
-
-            if (e.CloseReason == CloseReason.WindowsShutDown) return;
-
-            Application.Exit();
         }
     }
 }

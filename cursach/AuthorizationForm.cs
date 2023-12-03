@@ -29,7 +29,7 @@ namespace cursach
                 Guid userId = DataBase.AutorizationUser(email, password);
                 GlobalData.LoggedInUserId = userId;
                 GlobalData.AuthorizationForm.Hide();
-                GlobalData.VoteForm.Show();
+                GlobalData.MainApp.Show();
                 emailField.Text = "";
                 passwordField.Text = "";
             }
@@ -43,6 +43,10 @@ namespace cursach
             GlobalData.AuthorizationForm.Hide();
             GlobalData.RegistrationForm.Show();
         }
+        private void forgotPasswordButton_Click(object sender, EventArgs e)
+        {
+            GlobalData.ForgotPassword.ShowDialog();
+        }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
 
@@ -53,10 +57,5 @@ namespace cursach
             Application.Exit();
         }
 
-        private void forgotPasswordButton_Click(object sender, EventArgs e)
-        {
-            GlobalData.AuthorizationForm.Hide();
-            GlobalData.ForgotPassword.Show();
-        }
     }
 }
