@@ -30,6 +30,8 @@ namespace cursach
                 GlobalData.LoggedInUserId = userId;
                 GlobalData.AuthorizationForm.Hide();
                 GlobalData.VoteForm.Show();
+                emailField.Text = "";
+                passwordField.Text = "";
             }
             catch(Exception error) {
                 MessageBox.Show(error.Message);
@@ -41,10 +43,20 @@ namespace cursach
             GlobalData.AuthorizationForm.Hide();
             GlobalData.RegistrationForm.Show();
         }
-
-        private void OnFormClose_Click(object sender, EventArgs e)
+        protected override void OnFormClosing(FormClosingEventArgs e)
         {
+
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
             Application.Exit();
+        }
+
+        private void forgotPasswordButton_Click(object sender, EventArgs e)
+        {
+            GlobalData.AuthorizationForm.Hide();
+            GlobalData.ForgotPassword.Show();
         }
     }
 }

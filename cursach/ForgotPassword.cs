@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace cursach
 {
-    public partial class ProfileForm : Form
+    public partial class ForgotPassword : Form
     {
-        public ProfileForm()
+        public ForgotPassword()
         {
             InitializeComponent();
         }

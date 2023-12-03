@@ -34,7 +34,7 @@
             this.LogOutButton = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.PersonalInfo = new System.Windows.Forms.Label();
             this.NextVotingQuestionButton = new System.Windows.Forms.Button();
             this.questionComboBox = new System.Windows.Forms.ComboBox();
             this.OnFormClose = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@
             this.panel1.Controls.Add(this.LogOutButton);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.PersonalInfo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -81,7 +81,7 @@
             this.LogOutButton.ForeColor = System.Drawing.Color.White;
             this.LogOutButton.Location = new System.Drawing.Point(724, 25);
             this.LogOutButton.Name = "LogOutButton";
-            this.LogOutButton.Size = new System.Drawing.Size(63, 20);
+            this.LogOutButton.Size = new System.Drawing.Size(43, 13);
             this.LogOutButton.TabIndex = 3;
             this.LogOutButton.Text = "Log out";
             this.LogOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
@@ -92,7 +92,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(632, 25);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 20);
+            this.label6.Size = new System.Drawing.Size(29, 13);
             this.label6.TabIndex = 2;
             this.label6.Text = "Vote";
             // 
@@ -102,19 +102,20 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(560, 25);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 20);
+            this.label7.Size = new System.Drawing.Size(44, 13);
             this.label7.TabIndex = 1;
             this.label7.Text = "Contact";
             // 
-            // label8
+            // PersonalInfo
             // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(452, 25);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 20);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Personal Info";
+            this.PersonalInfo.AutoSize = true;
+            this.PersonalInfo.ForeColor = System.Drawing.Color.White;
+            this.PersonalInfo.Location = new System.Drawing.Point(452, 25);
+            this.PersonalInfo.Name = "PersonalInfo";
+            this.PersonalInfo.Size = new System.Drawing.Size(69, 13);
+            this.PersonalInfo.TabIndex = 0;
+            this.PersonalInfo.Text = "Personal Info";
+            this.PersonalInfo.Click += new System.EventHandler(this.PersonalInfo_Click);
             // 
             // NextVotingQuestionButton
             // 
@@ -132,19 +133,15 @@
             this.questionComboBox.Location = new System.Drawing.Point(72, 162);
             this.questionComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.questionComboBox.Name = "questionComboBox";
-            this.questionComboBox.Size = new System.Drawing.Size(300, 28);
+            this.questionComboBox.Size = new System.Drawing.Size(300, 21);
             this.questionComboBox.TabIndex = 11;
             // 
             // OnFormClose
             // 
-            this.OnFormClose.AutoSize = true;
-            this.OnFormClose.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.OnFormClose.Location = new System.Drawing.Point(747, 457);
+            this.OnFormClose.Location = new System.Drawing.Point(0, 0);
             this.OnFormClose.Name = "OnFormClose";
-            this.OnFormClose.Size = new System.Drawing.Size(35, 20);
-            this.OnFormClose.TabIndex = 15;
-            this.OnFormClose.Text = "Exit";
-            this.OnFormClose.Click += new System.EventHandler(this.OnFormClose_Click);
+            this.OnFormClose.Size = new System.Drawing.Size(100, 23);
+            this.OnFormClose.TabIndex = 0;
             // 
             // VoteForm
             // 
@@ -175,7 +172,7 @@
         private System.Windows.Forms.Label LogOutButton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label PersonalInfo;
         private System.Windows.Forms.Button NextVotingQuestionButton;
         private System.Windows.Forms.ComboBox questionComboBox;
         private System.Windows.Forms.Label OnFormClose;

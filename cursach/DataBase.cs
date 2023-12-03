@@ -100,6 +100,8 @@ namespace cursach
         }
         public static void LogOut() {
             GlobalData.LoggedInUserId = Guid.Empty;
+            GlobalData.VoteForm.Hide();
+            GlobalData.AuthorizationForm.Show();
             
         }
         public static void CreateTables()
@@ -253,6 +255,35 @@ namespace cursach
                 }
             }
             return votes;
+        }
+        public static List<(string Title, string Description)> GetVoteById(Guid voteId)
+        {
+            List<(string Title, string Description)> vote = new List<(string Title, string Description)>();
+
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = "SELECT title, description FROM votes WHERE id = @voteId";
+
+                using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@voteId", voteId);
+
+                    using (NpgsqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string title = reader["title"].ToString();
+                            string description = reader["description"].ToString();
+
+                            vote.Add((title, description));
+                        }
+                    }
+                }
+            }
+
+            return vote;
         }
     }
 }

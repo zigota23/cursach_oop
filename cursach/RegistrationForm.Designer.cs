@@ -217,17 +217,6 @@
             this.panel2.Size = new System.Drawing.Size(406, 546);
             this.panel2.TabIndex = 11;
             // 
-            // OnFormClose
-            // 
-            this.OnFormClose.AutoSize = true;
-            this.OnFormClose.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.OnFormClose.Location = new System.Drawing.Point(345, 504);
-            this.OnFormClose.Name = "OnFormClose";
-            this.OnFormClose.Size = new System.Drawing.Size(35, 20);
-            this.OnFormClose.TabIndex = 14;
-            this.OnFormClose.Text = "Exit";
-            this.OnFormClose.Click += new System.EventHandler(this.OnFormClose_Click);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;

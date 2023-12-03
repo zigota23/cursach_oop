@@ -168,17 +168,6 @@
             this.label11.TabIndex = 15;
             this.label11.Text = "Address:";
             // 
-            // OnFormClose
-            // 
-            this.OnFormClose.AutoSize = true;
-            this.OnFormClose.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.OnFormClose.Location = new System.Drawing.Point(724, 383);
-            this.OnFormClose.Name = "OnFormClose";
-            this.OnFormClose.Size = new System.Drawing.Size(35, 20);
-            this.OnFormClose.TabIndex = 17;
-            this.OnFormClose.Text = "Exit";
-            this.OnFormClose.Click += new System.EventHandler(this.OnFormClose_Click);
-            // 
             // ContactForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);

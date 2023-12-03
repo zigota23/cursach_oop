@@ -32,15 +32,24 @@ namespace cursach
             List<(Guid Id, string Title, string Description)> votes = DataBase.GetVotes();
             questionComboBox.DataSource = votes;
         }
-
-        private void OnFormClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void LogOutButton_Click(object sender, EventArgs e)
         {
             DataBase.LogOut();
+        }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+            Application.Exit();
+        }
+
+        private void PersonalInfo_Click(object sender, EventArgs e)
+        {
+            GlobalData.VoteForm.Hide();
+            GlobalData.ProfileForm.Show();
         }
     }
 }
