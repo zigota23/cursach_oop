@@ -167,6 +167,7 @@
     <Compile Include="VoteForm.Designer.cs">
       <DependentUpon>VoteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vote.cs" />
     <EmbeddedResource Include="AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </EmbeddedResource>

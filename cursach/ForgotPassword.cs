@@ -28,6 +28,7 @@ namespace cursach
                 return;
             }
             DataBase.ForgotPassword(email, password);
+            GlobalData.ForgotPassword.Hide();
         }
     }
 }

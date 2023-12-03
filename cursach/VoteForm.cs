@@ -17,7 +17,6 @@ namespace cursach
         public VoteForm()
         {
             InitializeComponent();
-            LoadQuestions(); 
         }
 
         private void submitButton_Click(object sender, EventArgs e)
@@ -27,11 +26,11 @@ namespace cursach
             //Guid voteId = DataBase.GetVoteIdByTitle(selectedQuestion);
         }
 
-        private void LoadQuestions()
-        {
-            List<(Guid Id, string Title, string Description)> votes = DataBase.GetVotes();
-            questionComboBox.DataSource = votes;
-        }
+        //private void LoadQuestions()
+        //{
+        //    List<(Guid Id, string Title, string Description)> votes = DataBase.GetVotes();
+        //    questionComboBox.DataSource = votes;
+        //}
         private void LogOutButton_Click(object sender, EventArgs e)
         {
             DataBase.LogOut();

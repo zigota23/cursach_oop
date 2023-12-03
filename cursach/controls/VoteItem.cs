@@ -12,11 +12,11 @@ namespace cursach.controls
 {
     public partial class VoteItem : UserControl
     {
-        public VoteItem(string title,string descripiton)
+        public VoteItem(string title,string description)
         {
             InitializeComponent();
             titleLabel.Text = title;    
-            descriptionLabel.Text = descripiton;    
+            descriptionLabel.Text = description;    
         }
     }
 }

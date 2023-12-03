@@ -229,9 +229,9 @@ namespace cursach
                 }
             }
         }
-        public static List<(Guid Id, string Title, string Description)> GetVotes()
+        public static List<Vote> GetVotes()
         {
-            List<(Guid Id, string Title, string Description)> votes = new List<(Guid Id, string Title, string Description)>();
+            List<Vote> votes = new List<Vote>();
 
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
@@ -249,7 +249,7 @@ namespace cursach
                             string title = reader.GetString(1);
                             string description = reader.IsDBNull(2) ? string.Empty : reader.GetString(2);
 
-                            votes.Add((voteId, title, description));
+                            votes.Add(new Vote(voteId, title, description));
                         }
                     }
                 }
