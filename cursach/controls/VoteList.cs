@@ -17,17 +17,35 @@ namespace cursach.controls
             InitializeComponent();
             this.Load += new EventHandler(VoteList_Shown);
         }
-        private void VoteList_Shown(Object sender, EventArgs e) {
+
+
+        private void VoteItem_Click(object sender, EventArgs e)
+        {
+            string id = ((VoteItem)sender).Name;
+            VoteForm form = new VoteForm(new Guid(id));
+            form.ShowDialog();
+        }
+
+
+        private void updateData()
+        {
             List<Vote> list = DataBase.GetVotes();
             int count = 0;
             list.ForEach(delegate (Vote item)
             {
                 VoteItem control = new VoteItem(item.title, item.description);
                 control.Location = new Point(25, 110 * count);
+                control.Click += VoteItem_Click;
+                control.Name = item.id.ToString();
+                
+
                 Console.WriteLine(item.id);
                 voteListPanel.Controls.Add(control);
                 count++;
             });
+        }
+        private void VoteList_Shown(Object sender, EventArgs e) {
+            updateData();
         }
         private void addVoteButton_Click(object sender, EventArgs e)
         {

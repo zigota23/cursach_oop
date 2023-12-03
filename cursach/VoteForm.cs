@@ -13,41 +13,13 @@ namespace cursach
 {
     public partial class VoteForm : Form
     {
-        //private DataBase database = new DataBase();
-        public VoteForm()
+        
+        public VoteForm(Guid voteId)
         {
             InitializeComponent();
+            //titleLabel.Text = title;
+            //descriptionLabel.Text = description;
         }
 
-        private void submitButton_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine(GlobalData.LoggedInUserId);
-            //string selectedQuestion = questionComboBox.SelectedItem.ToString();
-            //Guid voteId = DataBase.GetVoteIdByTitle(selectedQuestion);
-        }
-
-        //private void LoadQuestions()
-        //{
-        //    List<(Guid Id, string Title, string Description)> votes = DataBase.GetVotes();
-        //    questionComboBox.DataSource = votes;
-        //}
-        private void LogOutButton_Click(object sender, EventArgs e)
-        {
-            DataBase.LogOut();
-        }
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-
-            base.OnFormClosing(e);
-
-            if (e.CloseReason == CloseReason.WindowsShutDown) return;
-
-            Application.Exit();
-        }
-
-        private void PersonalInfo_Click(object sender, EventArgs e)
-        {
-            GlobalData.VoteForm.Hide();
-        }
     }
 }

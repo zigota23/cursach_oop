@@ -28,153 +28,101 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.submitButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.LogOutButton = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.PersonalInfo = new System.Windows.Forms.Label();
-            this.NextVotingQuestionButton = new System.Windows.Forms.Button();
-            this.questionComboBox = new System.Windows.Forms.ComboBox();
-            this.OnFormClose = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.codeeloGradientPanel1 = new CodeeloUI.Controls.CodeeloGradientPanel();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.noButton = new System.Windows.Forms.Button();
+            this.yesButton = new System.Windows.Forms.Button();
+            this.codeeloGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // codeeloGradientPanel1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(18, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 45);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Vote panel";
+            this.codeeloGradientPanel1.AccessibleRole = null;
+            this.codeeloGradientPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.codeeloGradientPanel1.CausesValidation = false;
+            this.codeeloGradientPanel1.ColorFillFirst = System.Drawing.Color.Fuchsia;
+            this.codeeloGradientPanel1.ColorFillSecond = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(152)))), ((int)(((byte)(255)))));
+            this.codeeloGradientPanel1.Controls.Add(this.yesButton);
+            this.codeeloGradientPanel1.Controls.Add(this.noButton);
+            this.codeeloGradientPanel1.Controls.Add(this.descriptionLabel);
+            this.codeeloGradientPanel1.Controls.Add(this.titleLabel);
+            this.codeeloGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.codeeloGradientPanel1.DrawGradient = true;
+            this.codeeloGradientPanel1.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.codeeloGradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.codeeloGradientPanel1.Name = "codeeloGradientPanel1";
+            this.codeeloGradientPanel1.Size = new System.Drawing.Size(410, 351);
+            this.codeeloGradientPanel1.TabIndex = 0;
             // 
-            // submitButton
+            // titleLabel
             // 
-            this.submitButton.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.submitButton.Location = new System.Drawing.Point(72, 405);
-            this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(165, 43);
-            this.submitButton.TabIndex = 7;
-            this.submitButton.Text = "SUBMIT";
-            this.submitButton.UseVisualStyleBackColor = false;
-            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.titleLabel.Location = new System.Drawing.Point(36, 32);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(52, 26);
+            this.titleLabel.TabIndex = 0;
+            this.titleLabel.Text = "Title";
             // 
-            // panel1
+            // descriptionLabel
             // 
-            this.panel1.Controls.Add(this.LogOutButton);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.PersonalInfo);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 65);
-            this.panel1.TabIndex = 8;
+            this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.descriptionLabel.Location = new System.Drawing.Point(37, 76);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(102, 24);
+            this.descriptionLabel.TabIndex = 1;
+            this.descriptionLabel.Text = "description";
             // 
-            // LogOutButton
+            // noButton
             // 
-            this.LogOutButton.AutoSize = true;
-            this.LogOutButton.ForeColor = System.Drawing.Color.White;
-            this.LogOutButton.Location = new System.Drawing.Point(724, 25);
-            this.LogOutButton.Name = "LogOutButton";
-            this.LogOutButton.Size = new System.Drawing.Size(43, 13);
-            this.LogOutButton.TabIndex = 3;
-            this.LogOutButton.Text = "Log out";
-            this.LogOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
+            this.noButton.BackColor = System.Drawing.Color.Firebrick;
+            this.noButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noButton.ForeColor = System.Drawing.Color.White;
+            this.noButton.Location = new System.Drawing.Point(47, 243);
+            this.noButton.Name = "noButton";
+            this.noButton.Size = new System.Drawing.Size(117, 41);
+            this.noButton.TabIndex = 2;
+            this.noButton.Text = "No";
+            this.noButton.UseVisualStyleBackColor = false;
             // 
-            // label6
+            // yesButton
             // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(632, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Vote";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(560, 25);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Contact";
-            // 
-            // PersonalInfo
-            // 
-            this.PersonalInfo.AutoSize = true;
-            this.PersonalInfo.ForeColor = System.Drawing.Color.White;
-            this.PersonalInfo.Location = new System.Drawing.Point(452, 25);
-            this.PersonalInfo.Name = "PersonalInfo";
-            this.PersonalInfo.Size = new System.Drawing.Size(69, 13);
-            this.PersonalInfo.TabIndex = 0;
-            this.PersonalInfo.Text = "Personal Info";
-            this.PersonalInfo.Click += new System.EventHandler(this.PersonalInfo_Click);
-            // 
-            // NextVotingQuestionButton
-            // 
-            this.NextVotingQuestionButton.Location = new System.Drawing.Point(562, 405);
-            this.NextVotingQuestionButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.NextVotingQuestionButton.Name = "NextVotingQuestionButton";
-            this.NextVotingQuestionButton.Size = new System.Drawing.Size(162, 43);
-            this.NextVotingQuestionButton.TabIndex = 10;
-            this.NextVotingQuestionButton.Text = "NEXT";
-            this.NextVotingQuestionButton.UseVisualStyleBackColor = true;
-            // 
-            // questionComboBox
-            // 
-            this.questionComboBox.FormattingEnabled = true;
-            this.questionComboBox.Location = new System.Drawing.Point(72, 162);
-            this.questionComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.questionComboBox.Name = "questionComboBox";
-            this.questionComboBox.Size = new System.Drawing.Size(300, 21);
-            this.questionComboBox.TabIndex = 11;
-            // 
-            // OnFormClose
-            // 
-            this.OnFormClose.Location = new System.Drawing.Point(0, 0);
-            this.OnFormClose.Name = "OnFormClose";
-            this.OnFormClose.Size = new System.Drawing.Size(100, 23);
-            this.OnFormClose.TabIndex = 0;
+            this.yesButton.BackColor = System.Drawing.Color.LimeGreen;
+            this.yesButton.Location = new System.Drawing.Point(247, 243);
+            this.yesButton.Name = "yesButton";
+            this.yesButton.Size = new System.Drawing.Size(117, 41);
+            this.yesButton.TabIndex = 3;
+            this.yesButton.Text = "Yes";
+            this.yesButton.UseVisualStyleBackColor = false;
             // 
             // VoteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(11)))), ((int)(((byte)(24)))));
-            this.ClientSize = new System.Drawing.Size(800, 491);
-            this.Controls.Add(this.OnFormClose);
-            this.Controls.Add(this.questionComboBox);
-            this.Controls.Add(this.NextVotingQuestionButton);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.submitButton);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(410, 351);
+            this.Controls.Add(this.codeeloGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "VoteForm";
             this.Text = "VoteForm";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.codeeloGradientPanel1.ResumeLayout(false);
+            this.codeeloGradientPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button submitButton;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label LogOutButton;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label PersonalInfo;
-        private System.Windows.Forms.Button NextVotingQuestionButton;
-        private System.Windows.Forms.ComboBox questionComboBox;
-        private System.Windows.Forms.Label OnFormClose;
+
+        private CodeeloUI.Controls.CodeeloGradientPanel codeeloGradientPanel1;
+        private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.Button yesButton;
+        private System.Windows.Forms.Button noButton;
+        private System.Windows.Forms.Label descriptionLabel;
     }
 }

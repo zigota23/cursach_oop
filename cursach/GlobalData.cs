@@ -13,7 +13,6 @@ namespace cursach
         public static RegistrationForm RegistrationForm  = new RegistrationForm();
         public static MainApp MainApp  = new MainApp();
         public static VoteAddForm VoteAddForm = new VoteAddForm();
-        public static VoteForm VoteForm = new VoteForm();
         public static ForgotPassword ForgotPassword = new ForgotPassword();
 
     }
