@@ -14,11 +14,11 @@ namespace cursach
     public partial class VoteForm : Form
     {
         
-        public VoteForm(Guid voteId)
+        public VoteForm(Guid voteId,string title,string description)
         {
             InitializeComponent();
-            //titleLabel.Text = title;
-            //descriptionLabel.Text = description;
+            titleLabel.Text = title;
+            descriptionLabel.Text = description;
         }
 
     }

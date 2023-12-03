@@ -21,8 +21,11 @@ namespace cursach.controls
 
         private void VoteItem_Click(object sender, EventArgs e)
         {
+
             string id = ((VoteItem)sender).Name;
-            VoteForm form = new VoteForm(new Guid(id));
+            string title = ((VoteItem)sender).title;
+            string description = ((VoteItem)sender).description;
+            VoteForm form = new VoteForm(new Guid(id),title,description);
             form.ShowDialog();
         }
 
