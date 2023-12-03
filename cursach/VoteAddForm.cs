@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace cursach
 {
@@ -49,10 +50,27 @@ namespace cursach
                 connection.Close();
             }
         }
-
         private void addButton_Click(object sender, EventArgs e)
-        {
-            DataBase.CreateVote(titleField.Text,descriptionField.Text,GlobalData.LoggedInUserId);
+        {          
+            string field1 = titleField.Text;
+            string field2 = descriptionField.Text;
+
+            if (string.IsNullOrEmpty(field1) || string.IsNullOrEmpty(field2))
+            {
+                MessageBox.Show("Заполните оба поля.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                //
+                // Код для сохранения данных в базу данных
+                //
+
+                MessageBox.Show("Данные успешно сохранены.", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DataBase.CreateVote(field1, field2, GlobalData.LoggedInUserId);
+
+                this.Close();
+            }
+            
         }
     }
 }
