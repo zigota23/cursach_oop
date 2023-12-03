@@ -282,9 +282,58 @@ namespace cursach
                         }
                     }
                 }
+                connection.Close();
             }
 
             return vote;
         }
+        public static User GetInfoById(Guid userId)
+        {
+            
+            int createdQuestions = 0;
+            int answeredQuestions = 0;
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string infoSql = "SELECT email,firstName,lastName FROM user WHERE id = @userId";
+                string createdQuestionsSql = "SELECT COUNT(*) FROM votes WHERE creatorId = @userId";
+                using (NpgsqlCommand createdQuestionsCommand = new NpgsqlCommand(createdQuestionsSql, connection))
+                {
+                    createdQuestionsCommand.Parameters.AddWithValue("@userId", userId);
+                    createdQuestions = Convert.ToInt32(createdQuestionsCommand.ExecuteScalar());
+                }
+
+                string answeredQuestionsSql = "SELECT COUNT(*) FROM votes_users_result WHERE userId = @userId AND result = true";
+                using (NpgsqlCommand answeredQuestionsCommand = new NpgsqlCommand(answeredQuestionsSql, connection))
+                {
+                    answeredQuestionsCommand.Parameters.AddWithValue("@userId", userId);
+                    answeredQuestions = Convert.ToInt32(answeredQuestionsCommand.ExecuteScalar());
+                }
+                using (NpgsqlCommand command = new NpgsqlCommand(infoSql, connection))
+                {
+                    command.Parameters.AddWithValue("@userId", userId);
+
+                    using (NpgsqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string email = reader["email"].ToString();
+                            string firstName = reader["firstName"].ToString();
+                            string lastName = reader["lastName"].ToString();
+                            connection.Close();
+                           return new User(email,firstName,lastName,createdQuestions,answeredQuestions);
+                            
+                        }
+                        else {
+                            connection.Close(); throw new Exception("error"); }
+                    }
+                }
+                
+            }
+
+            
+        }
+        
     }
 }

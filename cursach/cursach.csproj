@@ -135,6 +135,7 @@
     <Compile Include="RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
     <Compile Include="Validation.cs" />
     <Compile Include="VoteAddForm.cs">
       <SubType>Form</SubType>
