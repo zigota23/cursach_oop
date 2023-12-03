@@ -14,10 +14,13 @@ namespace cursach
 {
     public partial class VoteAddForm : Form
     {
+
         private string connectionString = "Server = localhost ; port = 5432; user id = postgres; password = root; database = cursach;";
-        public VoteAddForm()
+        private Action onAdd ;
+        public VoteAddForm(Action onAdd)
         {
             InitializeComponent();
+            this.onAdd = onAdd;
         }
 
         private void CreateNewVotingButton_Click(object sender, EventArgs e)
@@ -68,6 +71,8 @@ namespace cursach
                 MessageBox.Show("Данные успешно сохранены.", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DataBase.CreateVote(field1, field2, GlobalData.LoggedInUserId);
 
+
+                this.onAdd();
                 this.Close();
             }
             

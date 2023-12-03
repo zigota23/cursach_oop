@@ -49,7 +49,7 @@ namespace cursach.controls
         }
         private void addVoteButton_Click(object sender, EventArgs e)
         {
-            VoteAddForm voteAddForm = new VoteAddForm();
+            VoteAddForm voteAddForm = new VoteAddForm(updateData);
             voteAddForm.ShowDialog();
         }
     }

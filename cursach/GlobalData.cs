@@ -12,7 +12,6 @@ namespace cursach
         public static AuthorizationForm AuthorizationForm { get; set; }
         public static RegistrationForm RegistrationForm  = new RegistrationForm();
         public static MainApp MainApp  = new MainApp();
-        public static VoteAddForm VoteAddForm = new VoteAddForm();
         public static ForgotPassword ForgotPassword = new ForgotPassword();
 
     }
