@@ -30,6 +30,7 @@
         {
             this.titleLabel = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.Label();
+            this.lblCreateAt = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -52,11 +53,23 @@
             this.descriptionLabel.TabIndex = 1;
             this.descriptionLabel.Text = "Description";
             // 
+            // lblCreateAt
+            // 
+            this.lblCreateAt.AutoSize = true;
+            this.lblCreateAt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblCreateAt.Location = new System.Drawing.Point(584, 12);
+            this.lblCreateAt.Name = "lblCreateAt";
+            this.lblCreateAt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblCreateAt.Size = new System.Drawing.Size(51, 20);
+            this.lblCreateAt.TabIndex = 2;
+            this.lblCreateAt.Text = "label1";
+            // 
             // VoteItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Controls.Add(this.lblCreateAt);
             this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.titleLabel);
             this.Name = "VoteItem";
@@ -71,5 +84,6 @@
 
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label descriptionLabel;
+        private System.Windows.Forms.Label lblCreateAt;
     }
 }

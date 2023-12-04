@@ -15,14 +15,15 @@ namespace cursach.controls
         
         public string title;
         public string description;
-        public VoteItem(string title,string description)
+        public VoteItem(string title,string description,string createAt)
         {
             InitializeComponent();
             titleLabel.Text = title;    
             descriptionLabel.Text = description; 
-            
+            lblCreateAt.Text = createAt;
             this.title = title; 
             this.description = description;
+            
         }
 
         private void VoteItem_Load(object sender, EventArgs e)

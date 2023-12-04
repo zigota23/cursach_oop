@@ -236,7 +236,7 @@ namespace cursach
             {
                 connection.Open();
 
-                string getVotesQuery = "SELECT id, title, description FROM votes;";
+                string getVotesQuery = "SELECT id, title, description, createAt FROM votes;";
 
                 using (NpgsqlCommand command = new NpgsqlCommand(getVotesQuery, connection))
                 {
@@ -247,8 +247,9 @@ namespace cursach
                             Guid voteId = reader.GetGuid(0);
                             string title = reader.GetString(1);
                             string description = reader.IsDBNull(2) ? string.Empty : reader.GetString(2);
+                            string createAt = reader.GetString(3);
 
-                            votes.Add(new Vote(voteId, title, description));
+                            votes.Add(new Vote(voteId, title, description, createAt));
                         }
                     }
                 }

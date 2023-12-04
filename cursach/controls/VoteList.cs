@@ -36,7 +36,7 @@ namespace cursach.controls
             int count = 0;
             list.ForEach(delegate (Vote item)
             {
-                VoteItem control = new VoteItem(item.title, item.description);
+                VoteItem control = new VoteItem(item.title, item.description, item.createAt);
                 control.Location = new Point(25, 110 * count);
                 control.Click += VoteItem_Click;
                 control.Name = item.id.ToString();
