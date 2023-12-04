@@ -368,5 +368,24 @@ namespace cursach
             }
 
         }
+        public static bool IsUserAnswerThisVote(Guid userId, Guid voteId)
+        {
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = "SELECT COUNT(*) FROM votes_users_result WHERE userId = @userId AND voteId = @voteId";
+
+                using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@userId", userId);
+                    command.Parameters.AddWithValue("@voteId", voteId);
+
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+
+                    return count > 0;
+                }
+            }
+        }
     }
 }
