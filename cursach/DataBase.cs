@@ -374,16 +374,27 @@ namespace cursach
             {
                 connection.Open();
 
-                string sql = "SELECT COUNT(*) FROM votes_users_result WHERE userId = @userId AND voteId = @voteId";
+                string sql = "SELECT result FROM votes_users_result WHERE userId = @userId AND voteId = @voteId";
 
                 using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@userId", userId);
                     command.Parameters.AddWithValue("@voteId", voteId);
 
-                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    using (NpgsqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            bool answer = reader.GetBoolean(0);
+                            connection.Close();
+                            return answer;
 
-                    return count > 0;
+                        }
+                        else
+                        {
+                            connection.Close(); throw new Exception("No answer yet");
+                        }
+                    }
                 }
             }
         }

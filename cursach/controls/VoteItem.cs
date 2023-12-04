@@ -12,7 +12,7 @@ namespace cursach.controls
 {
     public partial class VoteItem : UserControl
     {
-
+        
         public string title;
         public string description;
         public VoteItem(string title,string description)
@@ -23,6 +23,18 @@ namespace cursach.controls
             
             this.title = title; 
             this.description = description;
+        }
+
+        private void VoteItem_Load(object sender, EventArgs e)
+        {
+            try { 
+            Guid voteId = new Guid(this.Name);
+            bool result = DataBase.IsUserAnswerThisVote(GlobalData.LoggedInUserId, voteId);
+            Console.WriteLine(result);
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

@@ -61,6 +61,7 @@
             this.Controls.Add(this.titleLabel);
             this.Name = "VoteItem";
             this.Size = new System.Drawing.Size(750, 100);
+            this.Load += new System.EventHandler(this.VoteItem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
