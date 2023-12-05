@@ -14,7 +14,7 @@ namespace cursach
     public partial class VoteForm : Form
     {
         private Guid voteId;
-        public VoteForm(Guid voteId,string title,string description)
+        public VoteForm(Guid voteId, string title, string description)
         {
             InitializeComponent();
             titleLabel.Text = title;
