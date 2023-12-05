@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VoteItem));
             this.titleLabel = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.lblCreateAt = new System.Windows.Forms.Label();
@@ -36,7 +37,9 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
+            this.titleLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.ForeColor = System.Drawing.Color.MediumSpringGreen;
             this.titleLabel.Location = new System.Drawing.Point(15, 9);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(45, 24);
@@ -46,7 +49,9 @@
             // descriptionLabel
             // 
             this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel.ForeColor = System.Drawing.Color.MediumSpringGreen;
             this.descriptionLabel.Location = new System.Drawing.Point(16, 33);
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.Size = new System.Drawing.Size(79, 17);
@@ -56,7 +61,9 @@
             // lblCreateAt
             // 
             this.lblCreateAt.AutoSize = true;
+            this.lblCreateAt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblCreateAt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblCreateAt.ForeColor = System.Drawing.Color.MediumSpringGreen;
             this.lblCreateAt.Location = new System.Drawing.Point(584, 12);
             this.lblCreateAt.Name = "lblCreateAt";
             this.lblCreateAt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -68,7 +75,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.Controls.Add(this.lblCreateAt);
             this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.titleLabel);
