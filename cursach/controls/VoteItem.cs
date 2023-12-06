@@ -43,18 +43,17 @@ namespace cursach.controls
                     bool isUserCreator = DataBase.IsUserCreatorOfVote(userId, voteId);
                     clsVote.Visible = isUserCreator;
 
-                    Console.WriteLine(isUserCreator);
+                    
                 }
                 else
                 {
-                    Console.WriteLine("Name не содержит информацию о дате и времени.");
                     clsVote.Visible = false;
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
                 clsVote.Visible = false;
+                MessageBox.Show(ex.Message);
             }
         }
 
