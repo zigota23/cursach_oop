@@ -81,7 +81,7 @@
             this.repeatPasswordField.Location = new System.Drawing.Point(48, 207);
             this.repeatPasswordField.Name = "repeatPasswordField";
             this.repeatPasswordField.Size = new System.Drawing.Size(277, 26);
-            this.repeatPasswordField.TabIndex = 40;
+            this.repeatPasswordField.TabIndex = 3;
             // 
             // label2
             // 
@@ -101,7 +101,7 @@
             this.passwordField.Location = new System.Drawing.Point(48, 150);
             this.passwordField.Name = "passwordField";
             this.passwordField.Size = new System.Drawing.Size(277, 26);
-            this.passwordField.TabIndex = 38;
+            this.passwordField.TabIndex = 2;
             // 
             // label5
             // 
@@ -122,7 +122,7 @@
             this.resetButton.Location = new System.Drawing.Point(117, 246);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(147, 34);
-            this.resetButton.TabIndex = 34;
+            this.resetButton.TabIndex = 4;
             this.resetButton.Text = "Reset";
             this.resetButton.UseVisualStyleBackColor = false;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
@@ -145,7 +145,7 @@
             this.emailField.Location = new System.Drawing.Point(48, 93);
             this.emailField.Name = "emailField";
             this.emailField.Size = new System.Drawing.Size(277, 26);
-            this.emailField.TabIndex = 32;
+            this.emailField.TabIndex = 1;
             // 
             // ForgotPassword
             // 

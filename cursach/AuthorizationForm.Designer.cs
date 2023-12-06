@@ -128,7 +128,7 @@
             this.passwordField.Location = new System.Drawing.Point(76, 202);
             this.passwordField.Name = "passwordField";
             this.passwordField.Size = new System.Drawing.Size(191, 26);
-            this.passwordField.TabIndex = 48;
+            this.passwordField.TabIndex = 2;
             this.passwordField.UseSystemPasswordChar = true;
             // 
             // label5
@@ -152,9 +152,9 @@
             this.label4.Location = new System.Drawing.Point(73, 309);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 9, 2, 2);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 17);
+            this.label4.Size = new System.Drawing.Size(142, 17);
             this.label4.TabIndex = 46;
-            this.label4.Text = "Don\'t have accout ?";
+            this.label4.Text = "Don\'t have account ?";
             // 
             // loginButton
             // 
@@ -164,7 +164,7 @@
             this.loginButton.Location = new System.Drawing.Point(76, 263);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(147, 34);
-            this.loginButton.TabIndex = 44;
+            this.loginButton.TabIndex = 3;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = false;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
@@ -202,7 +202,7 @@
             this.emailField.Location = new System.Drawing.Point(76, 145);
             this.emailField.Name = "emailField";
             this.emailField.Size = new System.Drawing.Size(191, 26);
-            this.emailField.TabIndex = 42;
+            this.emailField.TabIndex = 1;
             // 
             // panel2
             // 

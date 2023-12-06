@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace cursach
@@ -19,16 +12,25 @@ namespace cursach
 
         private void resetButton_Click(object sender, EventArgs e)
         {
+            string email = emailField.Text;
             string password = passwordField.Text;
             string repeatPassword = repeatPasswordField.Text;
-            string email = emailField.Text;
+
             if(password != repeatPassword)
             {
                 MessageBox.Show("Passwords don`t match");
                 return;
             }
-            DataBase.ForgotPassword(email, password);
-            GlobalData.ForgotPassword.Hide();
+
+            try{
+
+                DataBase.ForgotPassword(email, password);
+                MessageBox.Show("Password changed.");
+                this.Close();
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

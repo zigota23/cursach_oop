@@ -37,9 +37,10 @@
             this.addVoteButton.BackColor = System.Drawing.Color.ForestGreen;
             this.addVoteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addVoteButton.ForeColor = System.Drawing.Color.White;
-            this.addVoteButton.Location = new System.Drawing.Point(705, 12);
+            this.addVoteButton.Location = new System.Drawing.Point(691, 5);
+            this.addVoteButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addVoteButton.Name = "addVoteButton";
-            this.addVoteButton.Size = new System.Drawing.Size(127, 34);
+            this.addVoteButton.Size = new System.Drawing.Size(141, 37);
             this.addVoteButton.TabIndex = 0;
             this.addVoteButton.Text = "Add vote";
             this.addVoteButton.UseVisualStyleBackColor = false;
@@ -50,19 +51,21 @@
             this.voteListPanel.AutoScroll = true;
             this.voteListPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.voteListPanel.Location = new System.Drawing.Point(0, 52);
+            this.voteListPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.voteListPanel.Name = "voteListPanel";
-            this.voteListPanel.Size = new System.Drawing.Size(850, 308);
+            this.voteListPanel.Size = new System.Drawing.Size(850, 353);
             this.voteListPanel.TabIndex = 1;
             // 
             // VoteList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Controls.Add(this.voteListPanel);
             this.Controls.Add(this.addVoteButton);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "VoteList";
-            this.Size = new System.Drawing.Size(850, 360);
+            this.Size = new System.Drawing.Size(850, 405);
             this.ResumeLayout(false);
 
         }

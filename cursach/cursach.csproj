@@ -104,7 +104,6 @@
     <Compile Include="AuthorizationForm.Designer.cs">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="checkState.cs" />
     <Compile Include="controls\Contact.cs">
       <SubType>UserControl</SubType>
     </Compile>

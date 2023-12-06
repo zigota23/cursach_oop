@@ -58,6 +58,8 @@
             // yesButton
             // 
             this.yesButton.BackColor = System.Drawing.Color.LimeGreen;
+            this.yesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yesButton.ForeColor = System.Drawing.Color.Black;
             this.yesButton.Location = new System.Drawing.Point(247, 243);
             this.yesButton.Name = "yesButton";
             this.yesButton.Size = new System.Drawing.Size(117, 41);
@@ -107,11 +109,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(11)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(410, 351);
             this.Controls.Add(this.codeeloGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "VoteForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VoteForm";
             this.codeeloGradientPanel1.ResumeLayout(false);
             this.codeeloGradientPanel1.PerformLayout();

@@ -2,18 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace cursach
 {
     internal class DataBase
     {
-        private static string connectionString = "Server = localhost ; port = 5432; user id = postgres; password = maxim; database = users;";
+        private static string connectionString = "Server = localhost ; port = 5432; user id = postgres; password = root; database = cursach;";
         public static Guid AutorizationUser(string email, string password)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
@@ -57,7 +52,7 @@ namespace cursach
 
             }
         }
-        public void RegisterUser(string email, string password, string firstname, string lastname)
+        public static void RegisterUser(string email, string password, string firstname, string lastname)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
@@ -75,8 +70,8 @@ namespace cursach
 
                     if (userCount > 0)
                     {
-                        MessageBox.Show("User with this email already exists");
                         connection.Close();
+                        throw new Exception("User with this email already exists");
                     }
                     else
                     {
@@ -90,7 +85,7 @@ namespace cursach
                             cmd.Parameters.AddWithValue("@firstname", firstname);
                             cmd.Parameters.AddWithValue("@lastname", lastname);
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Successful registration.");
+                            
                             connection.Close();
                         }
                     }
@@ -98,12 +93,7 @@ namespace cursach
             }
 
         }
-        public static void LogOut()
-        {
-            GlobalData.LoggedInUserId = Guid.Empty;
-            GlobalData.MainApp.Hide();
-            GlobalData.AuthorizationForm.Show();
-        }
+       
         public static void CreateTables()
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
@@ -348,8 +338,8 @@ namespace cursach
 
                     if (userCount == 0)
                     {
-                        MessageBox.Show("User with this email doesn`t exist");
                         connection.Close();
+                        throw new Exception("User with this email doesn`t exist");
                     }
                     else
                     {
@@ -361,7 +351,7 @@ namespace cursach
                             cmd.Parameters.AddWithValue("@email", email);
                             cmd.Parameters.AddWithValue("@hashpass", hashpass);
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Password changed.");
+
                             connection.Close();
                         }
                     }
@@ -462,6 +452,48 @@ namespace cursach
 
                     connection.Close();
                 }
+            }
+        }
+
+
+        public static void deleteVote(Guid voteId)
+        {
+            var deleteSql = $"DELETE FROM votes_users_result WHERE voteid = '{voteId}'";
+            var deleteSql1 = $"DELETE FROM votes WHERE id = '{voteId}'";
+
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (var command = new NpgsqlCommand(deleteSql, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+
+                using (var command = new NpgsqlCommand(deleteSql1, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+
+                connection.Close();
+            }
+        }
+
+
+        public static void AddNewVotingQuestionToDatabase(string question)
+        {
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandText = "INSERT INTO voting_questions (question) VALUES (@question)";
+                    cmd.Parameters.AddWithValue("@question", question);
+                    cmd.ExecuteNonQuery();
+                }
+                connection.Close();
             }
         }
     }

@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Npgsql;
 
 
 namespace cursach
@@ -20,33 +11,14 @@ namespace cursach
         {
             InitializeComponent();
         }
-        
-        private void loginButton_Click(object sender, EventArgs e)
+
+
+        private void clearFields()
         {
-            string email = emailField.Text;
-            string password = passwordField.Text;
-            try { 
-                Guid userId = DataBase.AutorizationUser(email, password);
-                GlobalData.LoggedInUserId = userId;
-                GlobalData.AuthorizationForm.Hide();
-                GlobalData.MainApp.Show();
-                emailField.Text = "";
-                passwordField.Text = "";
-            }
-            catch(Exception error) {
-                MessageBox.Show(error.Message);
-            }
+            emailField.Text = "";
+            passwordField.Text = "";
         }
-        
-        private void SignUpButton_Click(object sender, EventArgs e)
-        {
-            GlobalData.AuthorizationForm.Hide();
-            GlobalData.RegistrationForm.Show();
-        }
-        private void forgotPasswordButton_Click(object sender, EventArgs e)
-        {
-            GlobalData.ForgotPassword.ShowDialog();
-        }
+
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
 
@@ -56,6 +28,36 @@ namespace cursach
 
             Application.Exit();
         }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            string email = emailField.Text;
+            string password = passwordField.Text;
+            try { 
+                GlobalData.LoggedInUserId = DataBase.AutorizationUser(email, password);
+
+                clearFields();
+
+                GlobalData.AuthorizationForm.Hide();
+                GlobalData.MainApp.Show();
+            }
+            catch(Exception error) {
+                MessageBox.Show(error.Message);
+            }
+        }
+        
+        private void SignUpButton_Click(object sender, EventArgs e)
+        {
+            clearFields();
+
+            GlobalData.AuthorizationForm.Hide();
+            GlobalData.RegistrationForm.Show();
+        }
+        private void forgotPasswordButton_Click(object sender, EventArgs e)
+        {
+             new ForgotPassword().ShowDialog();
+        }
+
 
     }
 }

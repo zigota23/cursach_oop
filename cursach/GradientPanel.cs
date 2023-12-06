@@ -87,7 +87,7 @@ namespace CodeeloUI.Controls
             SetStyle(ControlStyles.ResizeRedraw, true);
         }
 
-        #region [ События ]
+      
         protected override void OnPaint(PaintEventArgs e)
         {
             using (var lgb = new LinearGradientBrush(ClientRectangle, ColorFillFirst, ColorFillSecond, GradientDirection))
@@ -101,7 +101,7 @@ namespace CodeeloUI.Controls
             }
             base.OnPaint(e);
         }
-        #endregion
+   
 
         private void InitializeComponent()
         {

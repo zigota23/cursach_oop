@@ -19,7 +19,7 @@ namespace cursach.controls
     {
         public string title;
         public string description;
-        private static string connectionString = "Server = localhost ; port = 5432; user id = postgres; password = maxim; database = users;";
+
 
         public VoteItem(string title, string description, string createAt)
         {
@@ -41,8 +41,6 @@ namespace cursach.controls
                     Guid userId = GlobalData.LoggedInUserId;
 
                     bool isUserCreator = DataBase.IsUserCreatorOfVote(userId, voteId);
-
-                    // Установка видимости кнопки в зависимости от того, является ли пользователь создателем
                     clsVote.Visible = isUserCreator;
 
                     Console.WriteLine(isUserCreator);
@@ -50,44 +48,29 @@ namespace cursach.controls
                 else
                 {
                     Console.WriteLine("Name не содержит информацию о дате и времени.");
-                    HideVoteButton(); // Если произошла ошибка, скрываем кнопку
+                    clsVote.Visible = false;
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                HideVoteButton(); // Если произошла ошибка, скрываем кнопку
+                clsVote.Visible = false;
             }
         }
 
-        private void HideVoteButton()
-        {
-            clsVote.Visible = false;
-        }
 
         private void clsVote_Click(object sender, EventArgs e)
         {
 
-            var objectIdToDelete = Guid.Parse(this.Name);
-
-            var deleteSql = $"DELETE FROM votes_users_result WHERE voteid = '{objectIdToDelete}'";
-            var deleteSql1 = $"DELETE FROM votes WHERE id = '{objectIdToDelete}'";
-
-            using (var connection = new NpgsqlConnection(connectionString))
+            try
             {
-                connection.Open();
-
-                using (var command = new NpgsqlCommand(deleteSql, connection))
-                {
-                    command.ExecuteNonQuery();
-                }
-
-                using (var command = new NpgsqlCommand(deleteSql1, connection))
-                {
-                    command.ExecuteNonQuery();
-                }
-
+                var voteId = Guid.Parse(this.Name);
+                DataBase.deleteVote(voteId);
                 this.Parent.Controls.Remove(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

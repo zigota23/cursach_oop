@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace cursach
 {
@@ -12,7 +8,15 @@ namespace cursach
         public static AuthorizationForm AuthorizationForm { get; set; }
         public static RegistrationForm RegistrationForm  = new RegistrationForm();
         public static MainApp MainApp  = new MainApp();
-        public static ForgotPassword ForgotPassword = new ForgotPassword();
+
+
+
+        public static void LogOut()
+        {
+            LoggedInUserId = Guid.Empty;
+            MainApp.Hide();
+            AuthorizationForm.Show();
+        }
 
     }
 }

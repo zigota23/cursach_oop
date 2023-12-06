@@ -1,14 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
-using cursach.controls;
 
 namespace cursach.controls
 {
@@ -23,52 +16,54 @@ namespace cursach.controls
 
         private void VoteItem_Click(object sender, EventArgs e)
         {
-            string id = ((VoteItem)sender).Name;
-            Guid voteId = new Guid(id);
+            Guid voteId = new Guid(((VoteItem)sender).Name);
             try
             {
                 bool result = DataBase.IsUserAnswerThisVote(GlobalData.LoggedInUserId, voteId);
-                if (result) { MessageBox.Show("You already voited yes"); }
-                else { MessageBox.Show("You already voited no"); }
-            } catch {
-                
+                string message = result ? "You already voited 'Yes'" : "You already voited 'No'";
+                MessageBox.Show(message);
+            }
+            catch
+            {
+
                 string title = ((VoteItem)sender).title;
                 string description = ((VoteItem)sender).description;
-                VoteForm form = new VoteForm(voteId, title, description);
-                form.ShowDialog();
+                new VoteForm(voteId, title, description).ShowDialog();
             }
         }
 
 
         private void updateData()
         {
-            List<Vote> list = DataBase.GetVotes();
-            int count = 0;
-            list.ForEach(delegate (Vote item)
+            try
             {
-                VoteItem control = new VoteItem(item.title, item.description, item.createAt);
-                control.Location = new Point(25, 110 * count);
-                control.Click += VoteItem_Click;
-                control.Name = item.id.ToString();
-                
+                List<Vote> list = DataBase.GetVotes();
+                int count = 0;
+                list.ForEach(delegate (Vote item)
+                {
+                    VoteItem control = new VoteItem(item.title, item.description, item.createAt);
+                    control.Location = new Point(25, 95 * count);
+                    control.Click += VoteItem_Click;
+                    control.Name = item.id.ToString();
 
-                Console.WriteLine(item.id);
-                voteListPanel.Controls.Add(control);
-                count++;
-            });
+                    voteListPanel.Controls.Add(control);
+                    count++;
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
-        private void VoteList_Shown(Object sender, EventArgs e) {
+        private void VoteList_Shown(Object sender, EventArgs e)
+        {
             updateData();
         }
         private void addVoteButton_Click(object sender, EventArgs e)
         {
-            VoteAddForm voteAddForm = new VoteAddForm(updateData);
-            voteAddForm.ShowDialog();
+            new VoteAddForm(updateData).ShowDialog();
         }
 
-        public void rmvbtn1_Paint(object sender, PaintEventArgs e)
-        {
-           
-        }
+
     }
 }

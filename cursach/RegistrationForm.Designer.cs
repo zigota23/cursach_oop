@@ -81,7 +81,7 @@
             this.firstNameField.Location = new System.Drawing.Point(90, 175);
             this.firstNameField.Name = "firstNameField";
             this.firstNameField.Size = new System.Drawing.Size(249, 26);
-            this.firstNameField.TabIndex = 3;
+            this.firstNameField.TabIndex = 2;
             // 
             // label2
             // 
@@ -102,7 +102,7 @@
             this.lastNameField.Location = new System.Drawing.Point(90, 238);
             this.lastNameField.Name = "lastNameField";
             this.lastNameField.Size = new System.Drawing.Size(249, 26);
-            this.lastNameField.TabIndex = 5;
+            this.lastNameField.TabIndex = 3;
             // 
             // label3
             // 
@@ -123,7 +123,7 @@
             this.passwordField.Location = new System.Drawing.Point(90, 295);
             this.passwordField.Name = "passwordField";
             this.passwordField.Size = new System.Drawing.Size(249, 26);
-            this.passwordField.TabIndex = 7;
+            this.passwordField.TabIndex = 4;
             this.passwordField.UseSystemPasswordChar = true;
             // 
             // label4
@@ -145,7 +145,7 @@
             this.repeatPasswordField.Location = new System.Drawing.Point(90, 362);
             this.repeatPasswordField.Name = "repeatPasswordField";
             this.repeatPasswordField.Size = new System.Drawing.Size(249, 26);
-            this.repeatPasswordField.TabIndex = 9;
+            this.repeatPasswordField.TabIndex = 5;
             this.repeatPasswordField.UseSystemPasswordChar = true;
             // 
             // label5
@@ -168,7 +168,7 @@
             this.submitButton.Location = new System.Drawing.Point(90, 414);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(249, 35);
-            this.submitButton.TabIndex = 10;
+            this.submitButton.TabIndex = 6;
             this.submitButton.Text = "Create";
             this.submitButton.UseVisualStyleBackColor = false;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);

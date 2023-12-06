@@ -25,9 +25,15 @@ namespace cursach
 
         private void setResult(bool result)
         {
-            DataBase.AddUserVoteResult(GlobalData.LoggedInUserId,this.voteId,result);
-            MessageBox.Show("Thanks!");
-            this.Close();
+            try
+            {
+                DataBase.AddUserVoteResult(GlobalData.LoggedInUserId, this.voteId, result);
+                MessageBox.Show("Thanks!");
+                this.Close();
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void noButton_Click(object sender, EventArgs e)
         {
