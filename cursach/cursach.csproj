@@ -128,7 +128,7 @@
     <Compile Include="controls\VoteList.Designer.cs">
       <DependentUpon>VoteList.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataBase.cs" />
+    <Compile Include="classes\DataBase.cs" />
     <Compile Include="EditProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,8 +141,8 @@
     <Compile Include="ForgotPassword.Designer.cs">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="GlobalData.cs" />
-    <Compile Include="GradientPanel.cs">
+    <Compile Include="classes\GlobalData.cs" />
+    <Compile Include="controls\GradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="MainApp.cs">
@@ -159,8 +159,8 @@
     <Compile Include="RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
-    <Compile Include="Validation.cs" />
+    <Compile Include="classes\User.cs" />
+    <Compile Include="classes\Validation.cs" />
     <Compile Include="VoteAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,7 +173,7 @@
     <Compile Include="VoteForm.Designer.cs">
       <DependentUpon>VoteForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vote.cs" />
+    <Compile Include="classes\Vote.cs" />
     <EmbeddedResource Include="AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,7 +195,7 @@
     <EmbeddedResource Include="ForgotPassword.resx">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GradientPanel.resx">
+    <EmbeddedResource Include="controls\GradientPanel.resx">
       <DependentUpon>GradientPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainApp.resx">

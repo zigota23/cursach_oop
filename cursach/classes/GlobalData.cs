@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace cursach
 {
     public static class GlobalData

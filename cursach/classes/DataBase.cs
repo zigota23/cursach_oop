@@ -316,7 +316,7 @@ namespace cursach
                         }
                         else
                         {
-                            connection.Close(); throw new Exception("error");
+                            connection.Close(); throw new Exception("Can not find user");
                         }
                     }
                 }

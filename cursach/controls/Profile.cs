@@ -22,13 +22,13 @@ namespace cursach.controls
 
         private void Profile_Shown(object sender, EventArgs e)
         {
+            if (GlobalData.LoggedInUserId == null)
+            {
+                return;
+            }
+
             try
             {
-                if (GlobalData.LoggedInUserId == null)
-                {
-                    return;
-                }
-
                 user = DataBase.GetInfoById(GlobalData.LoggedInUserId);
 
                 if (user != null)
