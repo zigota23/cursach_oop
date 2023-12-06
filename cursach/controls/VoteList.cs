@@ -23,12 +23,20 @@ namespace cursach.controls
 
         private void VoteItem_Click(object sender, EventArgs e)
         {
-
             string id = ((VoteItem)sender).Name;
-            string title = ((VoteItem)sender).title;
-            string description = ((VoteItem)sender).description;
-            VoteForm form = new VoteForm(new Guid(id),title,description);
-            form.ShowDialog();
+            Guid voteId = new Guid(id);
+            try
+            {
+                bool result = DataBase.IsUserAnswerThisVote(GlobalData.LoggedInUserId, voteId);
+                if (result) { MessageBox.Show("You already voited yes"); }
+                else { MessageBox.Show("You already voited no"); }
+            } catch {
+                
+                string title = ((VoteItem)sender).title;
+                string description = ((VoteItem)sender).description;
+                VoteForm form = new VoteForm(voteId, title, description);
+                form.ShowDialog();
+            }
         }
 
 
