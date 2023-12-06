@@ -7,33 +7,13 @@ namespace cursach
     {
 
 
-        private Action onAdd;
-        public VoteAddForm(Action onAdd)
+
+        public VoteAddForm()
         {
             InitializeComponent();
-            this.onAdd = onAdd;
+
         }
 
-        private void CreateNewVotingButton_Click(object sender, EventArgs e)
-        {
-            string newVotingQuestion = titleField.Text;
-
-            if (string.IsNullOrEmpty(newVotingQuestion))
-            {
-                MessageBox.Show("New question text.");
-                return;
-            }
-
-            try
-            {
-                DataBase.AddNewVotingQuestionToDatabase(newVotingQuestion);
-                MessageBox.Show("New vote created!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
 
         private void addButton_Click(object sender, EventArgs e)
         {
@@ -50,7 +30,8 @@ namespace cursach
                 DataBase.CreateVote(field1, field2, GlobalData.LoggedInUserId);
                 MessageBox.Show("Vote saved successful", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                this.onAdd();
+
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)

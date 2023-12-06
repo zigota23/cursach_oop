@@ -13,7 +13,7 @@ namespace cursach.controls
     public partial class Profile : UserControl
     {
 
-        User user {  get; set; }
+        User user { get; set; }
         public Profile()
         {
             InitializeComponent();
@@ -52,18 +52,13 @@ namespace cursach.controls
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+
+            EditProfileForm editProfileForm = new EditProfileForm(user.email, user.firstName, user.lastName);
+            if (editProfileForm.ShowDialog() == DialogResult.OK)
             {
-                EditProfileForm editProfileForm = new EditProfileForm(user.email,user.firstName,user.lastName);
-                if (editProfileForm.ShowDialog() == DialogResult.OK)
-                {
-                    Profile_Shown(sender, e);
-                }
+                Profile_Shown(sender, e);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+
         }
     }
 }

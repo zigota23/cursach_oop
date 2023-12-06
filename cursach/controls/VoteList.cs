@@ -61,7 +61,12 @@ namespace cursach.controls
         }
         private void addVoteButton_Click(object sender, EventArgs e)
         {
-            new VoteAddForm(updateData).ShowDialog();
+            VoteAddForm form =  new VoteAddForm();
+
+            if(form.ShowDialog() == DialogResult.OK)
+            {
+                updateData();
+            }
         }
 
 

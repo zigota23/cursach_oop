@@ -33,6 +33,7 @@ namespace cursach
 
                 DataBase.UpdateUserInfo(newEmail, newFirstName, newLastName);
 
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)
