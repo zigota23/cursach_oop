@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using cursach.controls;
 
 namespace cursach.controls
 {
@@ -54,6 +56,11 @@ namespace cursach.controls
         {
             VoteAddForm voteAddForm = new VoteAddForm(updateData);
             voteAddForm.ShowDialog();
+        }
+
+        public void rmvbtn1_Paint(object sender, PaintEventArgs e)
+        {
+           
         }
     }
 }

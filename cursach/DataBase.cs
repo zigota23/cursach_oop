@@ -13,7 +13,7 @@ namespace cursach
 {
     internal class DataBase
     {
-        private static string connectionString = "Server = localhost ; port = 5432; user id = postgres; password = root; database = cursach;";
+        private static string connectionString = "Server = localhost ; port = 5432; user id = postgres; password = maxim; database = users;";
         public static Guid AutorizationUser(string email, string password)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
@@ -389,13 +389,78 @@ namespace cursach
                             bool answer = reader.GetBoolean(0);
                             connection.Close();
                             return answer;
-
                         }
                         else
                         {
                             connection.Close(); throw new Exception("No answer yet");
                         }
                     }
+                }
+            }
+        }
+
+        public static bool IsUserCreatorOfVote(Guid userId, Guid voteId)
+        {
+            bool isCreator = false;
+
+            try
+            {
+                using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT creatorid FROM votes WHERE id = @voteId AND creatorid = @userId";
+                    string query2 = "SELECT COUNT(*) FROM users WHERE id = @userId";
+
+                    using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@voteId", voteId);
+                        command.Parameters.AddWithValue("@userId", userId);
+
+                        using (NpgsqlDataReader reader = command.ExecuteReader())
+                        {
+                            // Если запись существует, то пользователь является создателем голосования
+                            isCreator = reader.HasRows;
+                        }
+                    }
+
+                    // Проверяем существование пользователя в таблице users
+                    using (NpgsqlCommand command = new NpgsqlCommand(query2, connection))
+                    {
+                        command.Parameters.AddWithValue("@userId", userId);
+
+                        int count = Convert.ToInt32(command.ExecuteScalar());
+                        isCreator = isCreator && (count > 0);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return isCreator;
+        }
+
+        public static void UpdateUserInfo(string email, string firstName, string lastName)
+        {
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (NpgsqlCommand command = new NpgsqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE users SET firstname = @FirstName, lastname = @LastName, email = @Email WHERE id = @UserId";
+
+                    command.Parameters.AddWithValue("@UserId", GlobalData.LoggedInUserId);
+                    command.Parameters.AddWithValue("@FirstName", firstName);
+                    command.Parameters.AddWithValue("@LastName", lastName);
+                    command.Parameters.AddWithValue("@Email", email);
+
+                    command.ExecuteNonQuery();
+
+                    connection.Close();
                 }
             }
         }

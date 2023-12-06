@@ -32,6 +32,7 @@
             this.titleLabel = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.lblCreateAt = new System.Windows.Forms.Label();
+            this.clsVote = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -71,12 +72,25 @@
             this.lblCreateAt.TabIndex = 2;
             this.lblCreateAt.Text = "label1";
             // 
+            // clsVote
+            // 
+            this.clsVote.AutoSize = true;
+            this.clsVote.BackColor = System.Drawing.Color.Transparent;
+            this.clsVote.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clsVote.Location = new System.Drawing.Point(730, 0);
+            this.clsVote.Name = "clsVote";
+            this.clsVote.Size = new System.Drawing.Size(20, 20);
+            this.clsVote.TabIndex = 3;
+            this.clsVote.Text = "X";
+            this.clsVote.Click += new System.EventHandler(this.clsVote_Click);
+            // 
             // VoteItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.Controls.Add(this.clsVote);
             this.Controls.Add(this.lblCreateAt);
             this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.titleLabel);
@@ -93,5 +107,6 @@
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label descriptionLabel;
         private System.Windows.Forms.Label lblCreateAt;
+        private System.Windows.Forms.Label clsVote;
     }
 }
