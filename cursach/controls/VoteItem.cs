@@ -29,6 +29,7 @@ namespace cursach.controls
             lblCreateAt.Text = createAt;
             this.title = title;
             this.description = description;
+     
         }
 
         private void VoteItem_Load(object sender, EventArgs e)
@@ -60,6 +61,12 @@ namespace cursach.controls
 
         private void clsVote_Click(object sender, EventArgs e)
         {
+            VoteDeleteForm form = new VoteDeleteForm(); 
+
+            if(form.ShowDialog() == DialogResult.No)
+            {
+                return;
+            }
 
             try
             {

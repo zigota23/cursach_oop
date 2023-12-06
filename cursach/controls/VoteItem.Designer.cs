@@ -79,6 +79,7 @@
             // 
             this.clsVote.AutoSize = true;
             this.clsVote.BackColor = System.Drawing.Color.Transparent;
+            this.clsVote.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clsVote.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.clsVote.ForeColor = System.Drawing.Color.White;
             this.clsVote.Location = new System.Drawing.Point(773, 7);
