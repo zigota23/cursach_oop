@@ -12,6 +12,8 @@ namespace cursach.controls
 {
     public partial class Profile : UserControl
     {
+
+        User user {  get; set; }
         public Profile()
         {
             InitializeComponent();
@@ -27,15 +29,15 @@ namespace cursach.controls
                     return;
                 }
 
-                User info = DataBase.GetInfoById(GlobalData.LoggedInUserId);
+                user = DataBase.GetInfoById(GlobalData.LoggedInUserId);
 
-                if (info != null)
+                if (user != null)
                 {
-                    lblFirstName.Text = info.firstName;
-                    lblLastName.Text = info.lastName;
-                    lblEmail.Text = info.email;
-                    lblCreatedVotes.Text = info.createdQuestions.ToString();
-                    lblVoteCast.Text = info.answeredQuestions.ToString();
+                    lblFirstName.Text = user.firstName;
+                    lblLastName.Text = user.lastName;
+                    lblEmail.Text = user.email;
+                    lblCreatedVotes.Text = user.createdQuestions.ToString();
+                    lblVoteCast.Text = user.answeredQuestions.ToString();
                 }
                 else
                 {
@@ -52,7 +54,7 @@ namespace cursach.controls
         {
             try
             {
-                EditProfileForm editProfileForm = new EditProfileForm();
+                EditProfileForm editProfileForm = new EditProfileForm(user.email,user.firstName,user.lastName);
                 if (editProfileForm.ShowDialog() == DialogResult.OK)
                 {
                     Profile_Shown(sender, e);

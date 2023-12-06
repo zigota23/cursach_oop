@@ -110,12 +110,6 @@
     <Compile Include="controls\Contact.Designer.cs">
       <DependentUpon>Contact.cs</DependentUpon>
     </Compile>
-    <Compile Include="controls\EditProfileForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="controls\EditProfileForm.Designer.cs">
-      <DependentUpon>EditProfileForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="controls\Profile.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -135,6 +129,12 @@
       <DependentUpon>VoteList.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
+    <Compile Include="EditProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProfileForm.Designer.cs">
+      <DependentUpon>EditProfileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,9 +180,6 @@
     <EmbeddedResource Include="controls\Contact.resx">
       <DependentUpon>Contact.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="controls\EditProfileForm.resx">
-      <DependentUpon>EditProfileForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="controls\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="controls\VoteList.resx">
       <DependentUpon>VoteList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProfileForm.resx">
+      <DependentUpon>EditProfileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ForgotPassword.resx">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
